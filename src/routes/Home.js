@@ -1,6 +1,5 @@
 import React from "react";
-import axios from "axios";
-// import Loading from "./loading";
+import { executeQuery } from "../common/commonFunc";
 import "./Home.css";
 
 class Home extends React.Component {
