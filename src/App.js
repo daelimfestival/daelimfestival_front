@@ -1,22 +1,27 @@
 import { Router, Route } from "react-router-dom";
 import Home from "./routes/Home";
-import { Youtube1, Youtube2, Youtube3 } from "./routes/YoutubeLink";
-import Community from "./routes/Community";
-import Contest from "./routes/Contest";
+import Stamp from "./routes/Stamp";
 import Goods from "./routes/Goods";
+import Tournament from "./routes/Tournament"
+import Community from "./routes/Community";
+import Guestbook from "./routes/guestbook";
+import Contest from "./routes/Contest";
+import Introduce from "./routes/Introduce";
+import Tarot from "./routes/Tarot";
 import "./App.css";
 
 function App() {
   return (
     <Router>
       <Route path="/" exact={true} component={Home} />
-      <Route path="/youtubelink1" component={Youtube1} />
-      <Route path="/youtubelink2" component={Youtube2} />
-      <Route path="/youtubelink2" component={Youtube3} />
-      <Route path="/community" component={Community} />
-      <Route path="/contest" component={Contest} />
+      <Route path="/stamp" component={Stamp} />
       <Route path="/goods" component={Goods} />
-      <Route path="/cookingclass" component={CookingClass} />
+      <Route path="/tournament" component={Tournament} />
+      <Route path="/community" component={Community} />
+      <Route path="/guestbook" component={Guestbook} />
+      <Route path="/contest" component={Contest} />
+      <Route path="/introduce" component={Introduce} />
+      <Route path="/tarot" component={Tarot} />
     </Router>
   );
 }
