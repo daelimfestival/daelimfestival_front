@@ -7,6 +7,11 @@
   padding: 20px;
 }
 
+.header span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .header img:first-child {
   width: 50px;
   height: 50px;
@@ -15,4 +20,14 @@
 .header img:nth-child(2) {
   width: 50px;
   height: 50px;
+}
+
+.image {
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/hamburger.png) 0 0 center no-repeat;
+  background-size: cover;
+  /* background-color: black; */
+  cursor: pointer;
 }
