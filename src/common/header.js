@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types'
 import Sidebar from "react-sidebar";
+import { IconContext } from "react-icons";
 import { AiOutlineMenu } from "react-icons/ai";
 import './header.css';
 
@@ -35,9 +36,16 @@ class Header extends React.Component {
                     }}
                 >
                 </Sidebar>
-                <div className="image" onClick={() => this.onSetSidebarOpen(true)}>
-                    <AiOutlineMenu />
-                </div>
+                <IconContext.Provider value={{
+                    style: {
+                        width: "100%",
+                        height: "100%"
+                    }
+                }}>
+                    <div className="image" onClick={() => this.onSetSidebarOpen(true)}>
+                        <AiOutlineMenu />
+                    </div>
+                </IconContext.Provider>
             </div>
         );
     }
