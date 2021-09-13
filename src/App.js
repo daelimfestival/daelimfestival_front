@@ -14,8 +14,8 @@ function App() {
   return (
     <HashRouter>
       <Route path="/" exact={true} component={Home} />
-      {/* <Route path="/stamp" component={Stamp} />
-      <Route path="/goods" component={Goods} />
+      {/* <Route path="/stamp" component={Stamp} /> */}
+      {/* <Route path="/goods" component={Goods} />
       <Route path="/tournament" component={Tournament} />
       <Route path="/community" component={Community} />
       <Route path="/guestbook" component={Guestbook} />

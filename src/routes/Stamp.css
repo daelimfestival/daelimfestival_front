@@ -1,0 +1,10 @@
+.stamp {
+  position: absolute;
+  top: 200px;
+  left: 700px;
+  width: 100px;
+  height: 100px;
+  /* background: url(../images/chattingicon.png);
+  background-size: cover; */
+  cursor: pointer;
+}
