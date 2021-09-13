@@ -2,14 +2,15 @@ import React from 'react';
 // import PropTypes from 'prop-types'
 import Sidebar from "react-sidebar";
 import { IconContext } from "react-icons";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu,AiFillHome } from "react-icons/ai";
+import { Link } from "react-router-dom"
 import './header.css';
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sidebarOpen: true
+            sidebarOpen: false
         };
         this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
     }
@@ -23,7 +24,7 @@ class Header extends React.Component {
             <div className="header">
                 <Sidebar
                     sidebar={
-                        <p>Sidebar content</p>
+                        <span>Sidebar content</span>
                     }
                     open={this.state.sidebarOpen}
                     onSetOpen={this.onSetSidebarOpen}
@@ -44,6 +45,22 @@ class Header extends React.Component {
                 }}>
                     <div className="image" onClick={() => this.onSetSidebarOpen(true)}>
                         <AiOutlineMenu />
+                    </div>
+                </IconContext.Provider>
+                <div className="home">
+                    <p>Daelim Festival</p>
+                </div>
+                <IconContext.Provider value={{
+                    style: {
+                        width: "100%",
+                        height: "100%",
+                        color: "black"
+                    }
+                }}>
+                    <div className="image">
+                        <Link to="/">
+                            <AiFillHome />
+                        </Link>
                     </div>
                 </IconContext.Provider>
             </div>
