@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types'
 import Sidebar from "react-sidebar";
+import { AiOutlineMenu } from "react-icons/ai";
 import './header.css';
 
 class Header extends React.Component {
@@ -34,7 +35,9 @@ class Header extends React.Component {
                     }}
                 >
                 </Sidebar>
-                <div className="image" onClick={() => this.onSetSidebarOpen(true)} />
+                <div className="image" onClick={() => this.onSetSidebarOpen(true)}>
+                    <AiOutlineMenu />
+                </div>
             </div>
         );
     }
