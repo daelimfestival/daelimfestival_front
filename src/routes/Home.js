@@ -7,15 +7,12 @@ import "./Home.css";
 import "animate.css";
 
 class Home extends React.Component {
+    
     render() {
         return (
-            <div className="wrap">
+            <div id="wrap">
                 <Header />
-                <div className="animate__animated animate__bounce">
-                    <Link to="/stamp">
-                        <Stamp />
-                    </Link>
-                </div>
+                <Stamp />
             </div>
         )
     }

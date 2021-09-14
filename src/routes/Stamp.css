@@ -1,10 +1,12 @@
 .stamp {
   position: absolute;
-  top: 200px;
-  left: 700px;
-  width: 100px;
-  height: 100px;
-  /* background: url(../images/chattingicon.png);
-  background-size: cover; */
+  top: 240px;
+  left: 980px;
+  width: 150px;
+  height: 150px;
   cursor: pointer;
+}
+
+.stamp path {
+  color: #0077ff;
 }
