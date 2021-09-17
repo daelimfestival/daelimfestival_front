@@ -19,6 +19,12 @@ class Header extends React.Component {
         this.setState({ sidebarOpen: open });
     }
 
+    title(page) {
+        return(
+            <p className="title">{page}</p>
+        )
+    }
+
     render() {
         return (
             <div className="header">
