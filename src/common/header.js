@@ -2,8 +2,8 @@ import React from 'react';
 // import PropTypes from 'prop-types'
 import Sidebar from "react-sidebar";
 import { IconContext } from "react-icons";
-import { AiOutlineMenu,AiFillHome } from "react-icons/ai";
-import { Link } from "react-router-dom"
+import { AiFillHome, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import './header.css';
 
 class Header extends React.Component {
@@ -17,6 +17,12 @@ class Header extends React.Component {
 
     onSetSidebarOpen(open) {
         this.setState({ sidebarOpen: open });
+    }
+
+    title(page) {
+        return(
+            <p className="title">{page}</p>
+        )
     }
 
     render() {
@@ -46,9 +52,7 @@ class Header extends React.Component {
                         <AiOutlineMenu />
                     </div>
                 </IconContext.Provider>
-                <div className="title">
-                    <p>Daelim Festival</p>
-                </div>
+                <p className="title">Daelim Festival</p>
                 <IconContext.Provider value={{
                     style: {
                         width: "100%",

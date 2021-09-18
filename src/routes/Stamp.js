@@ -3,16 +3,22 @@ import "animate.css";
 import "./Stamp.css";
 import { IconContext } from "react-icons";
 import { FaStamp } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import Modal from "react-modal";
+import StampPage from "../images/stamppage.png";
 
 const modalStyles = {
     overlay: {
         backgroundColor: 'rgba(32, 32, 32, 0.9)'
     },
     content: {
+        top: '100px',
         textAlign: 'center',
-        width: '960px',
-        height: '720px'
+        width: '566px',
+        height: '785px',
+        padding: '0',
+        backgroundImage: 'url('+ StampPage + ')',
+        backgroundSize: 'contain',
     }
 }
 
@@ -44,14 +50,18 @@ class Stamp extends React.Component {
                         height: "100%"
                     }
                 }}>
-                    <div className="stamp animate__animated animate__bounce infinite" onClick={this.handleOpenModal}>
+                    <div className="stamp animate__animated animate__bounce animate__infinite" onClick={this.handleOpenModal}>
                         <FaStamp />
                     </div>
                     <Modal
                         isOpen={this.state.showModal}
                         style={modalStyles}
+                        onRequestClose={this.handleCloseModal}
+                        ariaHideApp={false}
                     >
-                        <button onClick={this.handleCloseModal}>Close</button>
+                        <div className="closebtn">
+                            <AiOutlineClose onClick={this.handleCloseModal} />
+                        </div>
                     </Modal>
                 </IconContext.Provider>
             </div>

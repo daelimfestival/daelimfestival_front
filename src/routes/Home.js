@@ -1,6 +1,6 @@
 import React from "react";
 // import { executeQuery } from "../common/commonFunc";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Header from "../common/header.js";
 import Stamp from "./Stamp.js";
 import "./Home.css";
