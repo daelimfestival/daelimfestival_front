@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "animate.css";
 import "./Stamp.css";
 import { IconContext } from "react-icons";
@@ -7,7 +7,6 @@ import Modal from "react-modal";
 
 const modalStyles = {
     overlay: {
-        zIndex: 2,
         backgroundColor: 'rgba(32, 32, 32, 0.9)'
     },
     content: {

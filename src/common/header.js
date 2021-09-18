@@ -31,8 +31,7 @@ class Header extends React.Component {
                     styles={{
                         sidebar: {
                             background: "white",
-                            width: "300px",
-                            textAlign: "center"
+                            width: "300px"
                         }
                     }}
                 >
@@ -43,11 +42,11 @@ class Header extends React.Component {
                         height: "100%"
                     }
                 }}>
-                    <div className="image" onClick={() => this.onSetSidebarOpen(true)}>
+                    <div className="hamburger" onClick={() => this.onSetSidebarOpen(true)}>
                         <AiOutlineMenu />
                     </div>
                 </IconContext.Provider>
-                <div className="home">
+                <div className="title">
                     <p>Daelim Festival</p>
                 </div>
                 <IconContext.Provider value={{
@@ -57,7 +56,7 @@ class Header extends React.Component {
                         color: "black"
                     }
                 }}>
-                    <div className="image">
+                    <div className="home">
                         <Link to="/">
                             <AiFillHome />
                         </Link>
