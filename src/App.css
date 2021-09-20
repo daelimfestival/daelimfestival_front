@@ -1,10 +1,5 @@
 * {
   margin: 0 auto;
   padding: 0;
-}
-
-body {
-  background: url(./images/map.jpg) center 0 no-repeat;
-  background-size: 68%;
-  background-color: #0099ff;
+  text-decoration: none;
 }

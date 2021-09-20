@@ -1,0 +1,11 @@
+.game {
+    position: absolute;
+    top: 435px;
+    right: 535px;
+    width: 80px;
+    height: 80px;
+}
+
+.game path {
+    color: blue;
+}
