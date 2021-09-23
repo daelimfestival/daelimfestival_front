@@ -17,7 +17,7 @@ const modalStyles = {
         width: '566px',
         height: '785px',
         padding: '0',
-        backgroundImage: 'url('+ StampPage + ')',
+        backgroundImage: 'url(' + StampPage + ')',
         backgroundSize: 'contain',
     }
 }

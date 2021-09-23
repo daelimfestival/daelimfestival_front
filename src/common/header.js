@@ -10,9 +10,11 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sidebarOpen: false
+            sidebarOpen: false,
+            title: "Daelim Festival"
         };
         this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+
     }
 
     onSetSidebarOpen(open) {
@@ -46,7 +48,7 @@ class Header extends React.Component {
                         <AiOutlineMenu />
                     </div>
                 </IconContext.Provider>
-                <p className="title">Daelim Festival</p>
+                <p className="title">{this.state.title}</p>
                 <IconContext.Provider value={{
                     style: {
                         width: "100%",

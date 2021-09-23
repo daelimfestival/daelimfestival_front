@@ -1,7 +1,6 @@
 import { HashRouter, Route } from "react-router-dom";
 import Home from "./routes/Home";
-// import Game from "./routes/Game";
-// import Stamp from "./routes/Stamp";
+import Game from "./routes/Game";
 // import Goods from "./routes/Goods";
 // import Tournament from "./routes/Tournament"
 // import Community from "./routes/Community";
@@ -15,8 +14,7 @@ function App() {
   return (
     <HashRouter>
       <Route path="/" exact={true} component={Home} />
-      {/* <Route path="/stamp" component={Stamp} /> */}
-      {/* <Route path="/daelimgametournament" component={Game} /> */}
+      <Route path="/Daelim-Game-Tournament" component={Game} />
       {/* <Route path="/goods" component={Goods} />
       <Route path="/tournament" component={Tournament} />
       <Route path="/community" component={Community} />
