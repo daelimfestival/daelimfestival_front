@@ -33,7 +33,7 @@ class Header extends React.Component {
                             <Link to="Guest-Book">
                                 <p className="sidebar">방명록</p>
                             </Link>
-                            <Link to="/Daelim-Game-Tournament">
+                            <Link to="/Game">
                                 <p className="sidebar">대림게임토너먼트</p>
                             </Link>
                         </div>

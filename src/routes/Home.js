@@ -68,7 +68,7 @@ class Home extends React.Component {
                         </div>
                     </Modal>
                     <div className="game">
-                        <Link to="Daelim-Game-Tournament">
+                        <Link to="Game">
                             <FaGamepad />
                         </Link>
                     </div>
