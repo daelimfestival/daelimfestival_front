@@ -26,7 +26,17 @@ class Header extends React.Component {
             <div className="header">
                 <Sidebar
                     sidebar={
-                        <span>Sidebar content</span>
+                        <div>
+                            <Link to="Goods">
+                                <p className="sidebar">굿즈</p>
+                            </Link>
+                            <Link to="Guest-Book">
+                                <p className="sidebar">방명록</p>
+                            </Link>
+                            <Link to="/Daelim-Game-Tournament">
+                                <p className="sidebar">대림게임토너먼트</p>
+                            </Link>
+                        </div>
                     }
                     open={this.state.sidebarOpen}
                     onSetOpen={this.onSetSidebarOpen}
@@ -34,6 +44,9 @@ class Header extends React.Component {
                         sidebar: {
                             background: "white",
                             width: "300px"
+                        },
+                        overlay: {
+                            backgroundColor: "rgba(0, 0, 0, 0.6)"
                         }
                     }}
                 >
