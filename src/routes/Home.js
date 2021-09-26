@@ -25,6 +25,7 @@ const modalStyles = {
         backgroundSize: 'contain',
     }
 }
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
