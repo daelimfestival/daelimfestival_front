@@ -17,6 +17,10 @@
   color: black;
 }
 
+.loginpage {
+  bottom: 0;
+}
+
 .hamburger {
   position: absolute;
   top: 20px;

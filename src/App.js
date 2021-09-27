@@ -1,6 +1,7 @@
 import { HashRouter, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Game from "./routes/Game";
+import Login from "./routes/Login";
 // import Goods from "./routes/Goods";
 // import Tournament from "./routes/Tournament"
 // import Community from "./routes/Community";
@@ -15,6 +16,7 @@ function App() {
     <HashRouter>
       <Route path="/" exact={true} component={Home} />
       <Route path="/Game" component={Game} />
+      <Route path="/Login" component={Login} />
       {/* <Route path="/goods" component={Goods} />
       <Route path="/tournament" component={Tournament} />
       <Route path="/community" component={Community} />

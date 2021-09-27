@@ -14,7 +14,7 @@ export const executeQuery = ({
     Object.keys(data).map((element) => {
         params.append(element, data[element]);
     });
-    params.append("currenturl", location.href);
+    params.append("currenturl", Location.href);
     params.append("token", sessionStorage.getItem("token"));
 
     axios({
