@@ -10,17 +10,17 @@ export const executeQuery = ({
 }) => {
     axios.defaults.baseURL = "http://3.37.158.173/";
 
-    const params = new FormData();
-    Object.keys(data).map((element) => {
-        params.append(element, data[element]);
-    });
-    params.append("currenturl", Location.href);
-    params.append("token", sessionStorage.getItem("token"));
+    const json = new FormData();
+    // Object.keys(data).map((element) => {
+    //     params.append(element, data[element]);
+    // });
+    json.append("currenturl", Location.href);
+    json.append("token", sessionStorage.getItem("token"));
 
     axios({
         method: "post",
-        url,
-        data: params || {},
+        url: "http://3.37.158.173/action/member/login.php",
+        data: json || {},
     })
         .then((res) => {
             if (res.data.response === "error") {
@@ -38,7 +38,7 @@ export const executeQuery = ({
                 alert("서버접속에 실패하였습니다. 관리자에게 문의해주시기 바랍니다.");
             }
             if (res.data.response === "ok") {
-                // 성공시 동작 코드 작성
+                console.log("성공")
             }
         })
         .catch((err) => {

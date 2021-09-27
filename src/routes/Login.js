@@ -17,13 +17,13 @@ class Login extends React.Component {
                         <div className="login_logo">
                             <img src={Logo} alt="daelim logo" />
                         </div>
-                        <Form.Group controlId="login_id">
+                        <Form.Group controlId="member_id">
                             <Form.Control className="login_inputid" type="text" placeholder="ID" />
                         </Form.Group>
-                        <Form.Group controlId="login_pwd">
+                        <Form.Group controlId="password">
                             <Form.Control className="login_inputpwd" type="password" placeholder="Password" />
                         </Form.Group>
-                        <Button className="login_button" variant="primary" type="submit">
+                        <Button className="login_button" variant="primary" type="button" onClick={executeQuery}>
                             LOGIN
                         </Button>
                     </Form>
