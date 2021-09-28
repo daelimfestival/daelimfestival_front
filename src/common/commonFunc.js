@@ -1,26 +1,20 @@
+/* eslint no-restricted-globals: ["off"] */
+
 import axios from "axios";
 
 export const executeQuery = ({
     url,
     data,
-    currenturl,
     success,
     error,
     fail,
 }) => {
     axios.defaults.baseURL = "http://3.37.158.173/";
 
-    const json = new FormData();
-    // Object.keys(data).map((element) => {
-    //     params.append(element, data[element]);
-    // });
-    json.append("currenturl", Location.href);
-    json.append("token", sessionStorage.getItem("token"));
-
     axios({
         method: "post",
-        url: "http://3.37.158.173/action/member/login.php",
-        data: json || {},
+        url,
+        data: data || {},
     })
         .then((res) => {
             if (res.data.response === "error") {
