@@ -20,19 +20,15 @@ export const executeQuery = ({
             if (res.data.response === "error") {
                 if (error) {
                     error(res.data);
-                } else if (res.data.msg === "이미 사용중인 학번 주소입니다.") {
-                    error(res.data);
                 } else if (res.data.msg === "이미 로그인하셨습니다.") {
                     success(res.data);
                 } else {
                     alert(res.data.msg);
                 }
-            }
-            if (res.data.response === "fail") {
+            } else if (res.data.response === "fail") {
                 alert("서버접속에 실패하였습니다. 관리자에게 문의해주시기 바랍니다.");
-            }
-            if (res.data.response === "ok") {
-                console.log("성공")
+            } else if (res.data.response === "ok") {
+                success(res.data);
             }
         })
         .catch((err) => {

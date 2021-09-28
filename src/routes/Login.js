@@ -30,8 +30,6 @@ const Login = (props) => {
 
         let json = btoa(encodeURIComponent(json_data));
 
-        console.log(json)
-
         fnc.executeQuery({
             url: "action/member/login.php",
             data: {
@@ -39,6 +37,7 @@ const Login = (props) => {
             },
             success: (res) => {
                 sessionStorage.setItem("token", res.token);
+                location.replace("/");
             },
         });
     };
