@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Contest.css";
 import ReactPlayer from 'react-player';
-import cartoon1 from './img/cartoon1.png';
-import cartoon2 from './img/cartoon2.png';
-import cartoon3 from './img/cartoon3.png';
-import cartoon4 from './img/cartoon4.png';
+import cartoon1 from '../images/cartoon1.png';
+import cartoon2 from '../images/cartoon2.png';
+import cartoon3 from '../images/cartoon3.png';
+import cartoon4 from '../images/cartoon4.png';
 import Modal from 'react-modal';
 import { AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons";

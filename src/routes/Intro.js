@@ -1,10 +1,8 @@
 import React, { Component, useRef, useState } from "react";
 import ReactPlayer from 'react-player'
 import "./Intro.css";
-import poster1 from './img/poster1.png';
-import Moon from './img/pngegg.png';
-import sky from './img/darksky.png';
-import symbol from './img/symbol2.png';
+import poster1 from '../images/poster1.png';
+import sky from '../images/darksky.png';
 import { TiStarburstOutline } from 'react-icons/ti';
 import "animate.css";
 // Import Swiper React components

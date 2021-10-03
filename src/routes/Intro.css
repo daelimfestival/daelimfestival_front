@@ -1,0 +1,487 @@
+.main_wrap{
+    box-sizing: border-box;
+    padding: 100px;
+    background-color: black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    background-color: black;
+    animation-name: estelas;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-fill-mode: none;
+    animation-delay: 5s;
+    animation-fill-mode:forwards;
+    -webkit-text-stroke-color: #FF0099;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 0 .1em, 0 0 .3em #FF66CC;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FF0099;
+}
+p{
+    margin: 0;
+    background-color: black;
+}
+.Moon{
+    background-color: black;
+}
+.sky{
+    width: 100%;
+    height: 100%;
+}
+.HALLO{
+    position: absolute;
+    z-index: 98;
+    writing-mode: vertical-rl;
+    left: 0;
+    margin-left: 35px;
+    letter-spacing : 2.6px;
+}
+.star{
+    display: flex;
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    z-index: 98;
+    flex-flow: column nowrap;
+    margin: 230px 0 0 60px;
+    width: 100%;
+}
+.star h1{
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: 0.1s;
+    animation-name: estelas;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-fill-mode: none;
+    animation-delay: 5s;
+    animation-fill-mode:forwards;
+    text-shadow: 0 0 .1em, 0 0 .3em #FF66CC;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #FF0099;
+}
+.star p{
+    background-color: transparent;
+    margin-left: 80px;
+    color: black;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: 0.1s;
+    animation-name: estelas;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-fill-mode: none;
+    animation-delay: 5s;
+    animation-fill-mode:forwards;
+    text-shadow: 0 0 .1em, 0 0 .3em #FF66CC;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #FF0099;
+}
+.video{
+    position: absolute;
+    left: 0;
+    z-index: 98;
+    box-shadow: 0 0.1em, 0 0.3em #FF0099;
+    border: 0px solid #FF0099;
+    margin: 430px 0 50px 60px;
+}
+.text1{
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    color: white;
+    margin-top: 100px;
+}
+.text1 p{
+    animation-name: estelas;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-fill-mode: none;
+    animation-delay: 5s;
+    animation-fill-mode:forwards;
+    -webkit-text-stroke-color: #FF0099;
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 0 .1em, 0 0 .3em #FF66CC;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FF0099;
+}
+.sky{
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+}
+.symbol{
+    background-color: transparent;
+    border: 0px;
+}
+.poster1{
+    margin-top: 100px;
+}
+.far{
+    background-color: black;
+    position: absolute;
+    z-index: 99;
+}
+@keyframes estelas {
+    from {opacity:0.7;}
+    to {opacity:1;}
+}
+/* star css & animation */
+.fa-asterisk {
+    position: absolute;
+    font-size: 13px;
+}
+.star1 {
+    top: 70px;
+    left: 90px;
+    animation: star-one 1.2s infinite;
+    background-color: transparent;
+}
+
+.star2 {
+    top: 50px;
+    right: 110px;
+    animation: star-two 1.7s infinite;
+    background-color: transparent;
+}
+
+.star3 {
+    top: 180px;
+    left: 45px;
+    animation: star-three 1.5s infinite;
+    background-color: transparent;
+}
+
+.star4 {
+    top: 120px;
+    right: 40px;
+    font-size: 5px;
+    animation: star-five 1.9s infinite;
+    background-color: transparent;
+}
+
+.star5 {
+    top: 150px;
+    right: 30px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star6 {
+    top: 136px;
+    right: 80px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star7 {
+    top: 170px;
+    right: 45px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star8 {
+    top: 175px;
+    left: 80px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star9 {
+    top: 200px;
+    left: 90px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star10 {
+    top: 180px;
+    left: 120px;
+    font-size: 5px;
+    animation: star-three 2s infinite;
+    background-color: transparent;
+}
+.star11 {
+    top: 180px;
+    left: 200px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star12 {
+    top: 50px;
+    left: 240px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star13 {
+    top: 80px;
+    left: 300px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star14 {
+    top: 120px;
+    left: 330px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star15 {
+    top: 150px;
+    left: 340px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star16 {
+    top: 170px;
+    right: 330px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star17 {
+    top: 180px;
+    right: 350px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star18 {
+    top: 80px;
+    right: 240px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star19 {
+    top: 100px;
+    right: 200px;
+    font-size: 5px;
+    animation: star-three 2s infinite;
+    background-color: transparent;
+}
+.star20 {
+    top: 170px;
+    right: 220px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star21 {
+    top: 178px;
+    left: 328px;
+    animation: star-one 1.2s infinite;
+    background-color: transparent;
+}
+.star22 {
+    top: 245px;
+    right: 506px;
+    animation: star-two 1.7s infinite;
+    background-color: transparent;
+}
+.star23 {
+    top: 298px;
+    left: 552px;
+    animation: star-three 1.5s infinite;
+    background-color: transparent;
+}
+.star24 {
+    top: 192px;
+    right: 619px;
+    font-size: 5px;
+    animation: star-two 1.9s infinite;
+    background-color: transparent;
+}
+.star25 {
+    top: 317px;
+    right: 675px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star26 {
+    top: 259px;
+    right: 763px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star27 {
+    top: 295px;
+    right: 677px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star28 {
+    top: 322px;
+    left: 580px;
+    font-size: 5px;
+    animation: star-three 2s infinite;
+    background-color: transparent;
+}
+.star29 {
+    top: 210px;
+    left: 568px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star30 {
+    top: 180px;
+    left: 120px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star31 {
+    top: 75px;
+    left: 200px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star32 {
+    top: 60px;
+    left: 240px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star33 {
+    top: 65px;
+    left: 300px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star34 {
+    top: 55px;
+    left: 330px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star35 {
+    top: 30px;
+    left: 340px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star36 {
+    top: 70px;
+    right: 330px;
+    font-size: 5px;
+    animation: star-two 2s infinite;
+    background-color: transparent;
+}
+.star37 {
+    top: 80px;
+    right: 350px;
+    font-size: 5px;
+    animation: star-five 2s infinite;
+    background-color: transparent;
+}
+.star38 {
+    top: 80px;
+    right: 240px;
+    font-size: 5px;
+    animation: star-one 2s infinite;
+    background-color: transparent;
+}
+.star39 {
+    top: 20px;
+    right: 400px;
+    font-size: 5px;
+    animation: star-three 2s infinite;
+    background-color: transparent;
+}
+.star40 {
+    top: 100px;
+    right: 220px;
+    font-size: 5px;
+    animation: star-four 2s infinite;
+    background-color: transparent;
+}
+
+@keyframes star-one {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes star-two {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes star-three {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes star-four {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes star-five {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
