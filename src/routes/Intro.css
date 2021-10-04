@@ -7,7 +7,10 @@
     justify-content: center;
     align-items: center;
 }
-a{
+.link{
+    background-color: black;
+}
+.link a{
     background-color: black;
     animation-name: estelas;
     animation-duration: 2s;
@@ -24,7 +27,7 @@ a{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #FF0099;
 }
-p{
+.star p{
     margin: 0;
     background-color: black;
 }

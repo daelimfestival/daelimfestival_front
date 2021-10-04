@@ -1,8 +1,10 @@
 import React, { Component, useRef, useState } from "react";
 import ReactPlayer from 'react-player'
 import "./Intro.css";
-import poster1 from '../images/poster1.png';
-import sky from '../images/darksky.png';
+import poster1 from './img/poster1.png';
+import Moon from './img/pngegg.png';
+import sky from './img/darksky.png';
+import symbol from './img/symbol2.png';
 import { TiStarburstOutline } from 'react-icons/ti';
 import "animate.css";
 // Import Swiper React components
@@ -83,8 +85,8 @@ class intro extends Component{
                     <p>Guest-part2: 에스파, 한효주, 한지민</p>
                 </div>
                 <img className={'sky'} src={sky} alt=""/>
-                <div>
-                    <a href={'https://www.daelim.ac.kr/intro.do'}><p>대림대학교 더 살펴보기</p></a>
+                <div className={'link'}>
+                    <a href={'https://www.daelim.ac.kr/intro.do'}>대림대학교 더 살펴보기 click</a>
                 </div>
             </div>
 

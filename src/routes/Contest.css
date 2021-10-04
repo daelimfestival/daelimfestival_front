@@ -9,6 +9,7 @@
 .conWrap p{
     font-size: 15px;
     color: #888888;
+    background-color: white;
 }
 .conWrap h1{
     font-weight: bold;
@@ -38,16 +39,15 @@
     color: #0095c8;
     margin: 0;
     font-weight: bold;
+    background-color: white;
 }
 .contestBox span{
     font-size: 15px;
     margin: 0;
     color: #999999;
 }
-.ListGroup{
-
-}
 a{
     color: black;
     text-decoration: none;
+    background-color: white;
 }
