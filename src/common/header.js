@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types'
 import Sidebar from "react-sidebar";
 import { IconContext } from "react-icons";
 import { AiFillHome, AiOutlineMenu } from "react-icons/ai";
@@ -13,47 +12,18 @@ class Header extends React.Component {
         this.state = {
             sidebarOpen: false,
             title: "Daelim Festival",
-            token: "",
+            token: sessionStorage.getItem('token'),
             loginText: ""
         };
         this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
-        // this.sessionYN = this.sessionYN.bind(this);
     }
 
     onSetSidebarOpen(open) {
         this.setState({ sidebarOpen: open });
     }
 
-    onChangeToken(e) {
-        this.setState({ token: sessionStorage.getItem('token') });
-        console.log(this.state.token);
-    }
-
-    // getData() {
-    //     let current_url = location.href;
-    //     let json_data = '{"current_url":"' + current_url + '","id":' + inputId + ',"password":"' + inputPassword + '"}';
-
-    //     let json = btoa(encodeURIComponent(json_data));
-
-    //     fnc.executeQuery({
-    //         url: "action/member/login.php",
-    //         data: {
-    //             json: json
-    //         },
-    //         success: (res) => {
-    //             sessionStorage.setItem("token", res.token);
-    //             location.replace("/");
-    //         },
-    //     });
-    // }
-
-    // onSubmit(e) {
-    //     e.preventDefault();
-    //     getData();
-    // }
-
-    sessionYN() {
-        if (this.state.token) {
+    componentDidMount() {
+        if (this.state.token !== "") {
             this.setState({ loginText: "로그인" });
         } else {
             this.setState({ loginText: "로그아웃" });
@@ -76,7 +46,7 @@ class Header extends React.Component {
                                 <p className="sidebar">대림게임토너먼트</p>
                             </Link>
                             <Link to="/Login">
-                                <p className="sidebar loginpage">{this.state.token}</p>
+                                <p className="sidebar loginpage">{this.state.loginText}</p>
                             </Link>
                         </div>
                     }

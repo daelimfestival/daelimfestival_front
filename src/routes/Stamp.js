@@ -68,5 +68,3 @@ class Stamp extends React.Component {
         );
     }
 }
-
-export default Stamp;
