@@ -7,7 +7,7 @@ import Logo from "../images/login.png";
 import * as fnc from "../common/commonFunc.js";
 import "./Login.css";
 
-const Login = (props) => {
+function Login(props) {
     const [inputId, setInputId] = useState("");
     const [inputPassword, setInputPassword] = useState("");
 
