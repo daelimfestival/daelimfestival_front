@@ -27,15 +27,12 @@ const modalStyles = {
 }
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showModal: false
-        };
+    state = {
+        showModal: false
+    };
 
-        this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
-    }
+    handleOpenModal = this.handleOpenModal.bind(this);
+    handleCloseModal = this.handleCloseModal.bind(this);
 
     handleOpenModal() {
         this.setState({ showModal: true });

@@ -9,7 +9,7 @@ export const executeQuery = ({
     error,
     fail,
 }) => {
-    axios.defaults.baseURL = "http://13.209.7.48/";
+    axios.defaults.baseURL = "http://52.79.141.166/";
 
     axios({
         method: "post",

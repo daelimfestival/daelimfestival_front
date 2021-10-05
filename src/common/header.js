@@ -1,32 +1,73 @@
+/* eslint no-restricted-globals: ["off"] */
 import React from 'react';
 import Sidebar from "react-sidebar";
 import { IconContext } from "react-icons";
 import { AiFillHome, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
-// import * as fnc from "../common/commonFunc.js";
+import * as fnc from "../common/commonFunc.js";
 import './header.css';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sidebarOpen: false,
-            title: "Daelim Festival",
-            token: sessionStorage.getItem('token'),
-            loginText: ""
-        };
-        this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
-    }
+    state = {
+        sidebarOpen: false,
+        title: "Daelim Festival",
+        token: sessionStorage.getItem("token"),
+        loginText: ""
+    };
+
+    onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
 
     onSetSidebarOpen(open) {
         this.setState({ sidebarOpen: open });
     }
 
     componentDidMount() {
-        if (this.state.token !== "") {
+        if (this.state.token === "") {
             this.setState({ loginText: "로그인" });
         } else {
             this.setState({ loginText: "로그아웃" });
+        }
+
+        // if (this.state.loginText === "로그아웃") {
+        //     fnc.executeQuery({
+        //         url: "action/member/logout.php",
+        //         data: {
+        //             json: json
+        //         },
+        //         success: (res) => {
+        //             sessionStorage.removeItem("token", res.token);
+        //             location.replace("/")
+        //         }
+        //     })
+        // }
+    }
+
+    loginOut() {
+        if (this.state.loginText === "로그인") {
+            return (
+                <Link to="/Login">
+                    <p className="sidebar loginpage">{this.state.loginText}</p>
+                </Link>
+            )
+        } else if (this.state.loginText === "로그아웃") {
+            let current_url = location.href;
+            let json_data = '{"current_url":"' + current_url + '","token":"' + sessionStorage.getItem("token") + '"}';
+            let json = btoa(encodeURIComponent(json_data));
+            fnc.executeQuery({
+                url: "action/member/logout.php",
+                data: {
+                    json: json
+                },
+                success: (res) => {
+                    sessionStorage.removeItem("token", res.token);
+                    location.replace("/")
+                }
+            })
+            return (
+                <Link to="/">
+                    <p className="sidebar loginpage">{this.state.loginText}</p>
+                </Link>
+            )
         }
     }
 
@@ -45,9 +86,7 @@ class Header extends React.Component {
                             <Link to="/Game">
                                 <p className="sidebar">대림게임토너먼트</p>
                             </Link>
-                            <Link to="/Login">
-                                <p className="sidebar loginpage">{this.state.loginText}</p>
-                            </Link>
+                            {this.loginOut()}
                         </div>
                     }
                     open={this.state.sidebarOpen}
