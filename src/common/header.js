@@ -11,8 +11,8 @@ class Header extends React.Component {
     state = {
         sidebarOpen: false,
         title: "Daelim Festival",
-        token: "",
-        login: ""
+        token: sessionStorage.getItem("token") ? sessionStorage.getItem("token") : null,
+        sync: sessionStorage.getItem("token") ? "로그아웃" : "로그인"
     };
 
     onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
@@ -21,32 +21,11 @@ class Header extends React.Component {
         this.setState({ sidebarOpen: open });
     }
 
-    componentDidMount() {
-        this.setState({ token: sessionStorage.getItem("token") })
-        if (this.state.token !== "") {
-            this.setState({ login: "로그아웃" });
-        } else {
-            this.setState({ login: "로그인" });
-        }
-
-        // if (this.state.loginText === "로그아웃") {
-        //     fnc.executeQuery({
-        //         url: "action/member/logout.php",
-        //         data: {
-        //             json: json
-        //         },
-        //         success: (res) => {
-        //             sessionStorage.removeItem("token", res.token);
-        //             location.replace("/")
-        //         }
-        //     })
-        // }
-    }
-
-    logOut() {
+    logOut(log_token) {
         let current_url = location.href;
-        let json_data = '{"current_url":"' + current_url + '","token":"' + sessionStorage.getItem("token") + '"}';
+        let json_data = '{"current_url":"' + current_url + '", "token":"' + log_token + '"}';
         let json = btoa(encodeURIComponent(json_data));
+        console.log(json_data)
         fnc.executeQuery({
             url: "action/member/logout.php",
             data: {
@@ -54,21 +33,22 @@ class Header extends React.Component {
             },
             success: (res) => {
                 sessionStorage.removeItem("token", res.token);
+                window.location.reload()
             }
         });
     }
 
     logInOut() {
-        if (this.state.login === "로그인") {
+        if (this.state.sync === "로그인") {
             return (
                 <Link to="/Login">
-                    <p className="sidebar loginpage">{this.state.login}</p>
+                    <p className="sidebar loginpage">{this.state.sync}</p>
                 </Link>
             )
-        } else {
+        } else if (this.state.sync === "로그아웃") {
             return (
                 <Link to="/">
-                    <p className="sidebar loginpage" onClick={this.logOut()}>{this.state.login}</p>
+                    <p className="sidebar loginpage" onClick={() => this.logOut(this.state.token)}>{this.state.sync}</p>
                 </Link>
             )
         }
