@@ -19,11 +19,6 @@ function Login(props) {
         setInputPassword(e.target.value);
     };
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        getData();
-    };
-
     const getData = () => {
         let current_url = location.href;
         let json_data = '{"current_url":"' + current_url + '","id":' + inputId + ',"password":"' + inputPassword + '"}';
@@ -40,6 +35,11 @@ function Login(props) {
                 location.replace("/");
             },
         });
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        getData();
     };
 
     return (
