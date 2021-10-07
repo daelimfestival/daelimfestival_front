@@ -23,9 +23,14 @@ class Header extends React.Component {
 
     logOut(log_token) {
         let current_url = location.href;
-        let json_data = '{"current_url":"' + current_url + '", "token":"' + log_token + '"}';
-        let json = btoa(encodeURIComponent(json_data));
-        console.log(json_data)
+
+        let json_data = {
+            current_url,
+            token : log_token
+        };
+
+        let json = btoa(encodeURIComponent(JSON.stringify(json_data)));
+
         fnc.executeQuery({
             url: "action/member/logout.php",
             data: {

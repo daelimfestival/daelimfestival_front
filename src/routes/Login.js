@@ -21,9 +21,14 @@ function Login(props) {
 
     const getData = () => {
         let current_url = location.href;
-        let json_data = '{"current_url":"' + current_url + '","id":' + inputId + ',"password":"' + inputPassword + '"}';
 
-        let json = btoa(encodeURIComponent(json_data));
+        let json_data = {
+            current_url,
+            id : inputId,
+            password : inputPassword
+        };
+
+        let json = btoa(encodeURIComponent(JSON.stringify(json_data)));
 
         fnc.executeQuery({
             url: "action/member/login.php",
