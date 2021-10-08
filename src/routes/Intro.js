@@ -74,7 +74,7 @@ class intro extends Component{
             </div>
         )
     }
-
+}
 
 
 export default intro;
