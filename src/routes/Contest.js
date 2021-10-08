@@ -12,7 +12,8 @@ class Con extends React.Component {
     state = {
         showCartoon: false,
         showLiterature: false,
-        showVideo: false
+        showVideo: false,
+        contest_page: null
     };
 
     openCartoon = this.openCartoon.bind(this);
@@ -25,7 +26,7 @@ class Con extends React.Component {
             showLiterature: false,
             showVideo: false
         });
-        return this.state.showCartoon ? <Cartoon /> : null 
+        this.state.contest_page = this.state.showCartoon ? <Cartoon /> : null 
     }
 
     openLiterature() {
@@ -34,7 +35,7 @@ class Con extends React.Component {
             showLiterature: true,
             showVideo: false
         });
-        return this.state.showLiterature ? <Literature /> : null
+        this.state.contest_page = this.state.showLiterature ? <Literature /> : null
     }
     
     openVideo() {
@@ -43,18 +44,8 @@ class Con extends React.Component {
             showLiterature: false,
             showVideo: true
         });
-        return this.state.showVideo ? <Video /> : null
+        this.state.contest_page = this.state.showVideo ? <Video /> : null
     }
-
-    // test() {
-    //     if () {
-    //         return <Cartoon />
-    //     } else if () {
-    //         return <Literature />
-    //     } else {
-    //         return <Video />
-    //     }
-    // }
 
     render() {
         return (
@@ -75,13 +66,12 @@ class Con extends React.Component {
                         <li>제출하기를 누르면 스탬프 1개 지급!</li>
                     </ul>
                     <ListGroup horizontal>
-                        <ListGroup.Item onClick={() => this.openCartoon()}>만화</ListGroup.Item>
-                        <ListGroup.Item onClick={() => this.openLiterature()}>문학</ListGroup.Item>
-                        <ListGroup.Item onClick={() => this.openVideo()}>영상</ListGroup.Item>
+                        <ListGroup.Item as="button" action onClick={() => this.openCartoon()}>만화</ListGroup.Item>
+                        <ListGroup.Item as="button" action onClick={() => this.openLiterature()}>문학</ListGroup.Item>
+                        <ListGroup.Item as="button" action onClick={() => this.openVideo()}>영상</ListGroup.Item>
                     </ListGroup>
                     <div>
-                        {/* <cartoon1 /> */}
-
+                        {this.state.contest_page}
                     </div>
                 </div>
             </div>
