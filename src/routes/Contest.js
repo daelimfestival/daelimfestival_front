@@ -10,23 +10,11 @@ import Video from './Video';
 
 class Con extends React.Component {
     state = {
-        showCartoon: false,
-        showLiterature: false,
-        showVideo: false,
-        contest_page: null
+        contest_page: <Cartoon />
     };
 
-    openCartoon = this.openCartoon.bind(this);
-    openLiterature = this.openLiterature.bind(this);
-    openVideo = this.openVideo.bind(this);
-
     openCartoon() {
-        this.setState({
-            showCartoon: true,
-            showLiterature: false,
-            showVideo: false
-        });
-        this.state.contest_page = this.state.showCartoon ? <Cartoon /> : null 
+        this.state.contest_page =  <Cartoon />
     }
 
     openLiterature() {
@@ -35,7 +23,7 @@ class Con extends React.Component {
             showLiterature: true,
             showVideo: false
         });
-        this.state.contest_page = this.state.showLiterature ? <Literature /> : null
+        this.state.contest_page = <Literature />
     }
     
     openVideo() {
@@ -44,7 +32,7 @@ class Con extends React.Component {
             showLiterature: false,
             showVideo: true
         });
-        this.state.contest_page = this.state.showVideo ? <Video /> : null
+        this.state.contest_page = <Video />
     }
 
     render() {
