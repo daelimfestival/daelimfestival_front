@@ -9,15 +9,37 @@
 
 .stamp {
   position: absolute;
-  top: 270px;
-  left: 1075px;
+  top: 17rem;
+  right: 48rem;
   width: 80px;
   height: 80px;
   cursor: pointer;
 }
 
 .stamp path {
-  color: goldenrod;
+  color: #CC0099;
+}
+
+.contest {
+  position: absolute;
+  top: 32rem;
+  left: 32rem;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.contest path {
+  color: gold;
+}
+
+.guestbook {
+  position: absolute;
+  top: 28rem;
+  left: 45rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
 }
 
 .closebtn {
@@ -31,8 +53,8 @@
 
 .game {
     position: absolute;
-    top: 435px;
-    right: 535px;
+    top: 27rem;
+    right: 33.5rem;
     width: 80px;
     height: 80px;
 }

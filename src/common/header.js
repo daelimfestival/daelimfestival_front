@@ -10,7 +10,7 @@ import './header.css';
 class Header extends React.Component {
     state = {
         sidebarOpen: false,
-        title: "Daelim Festival",
+        title: "",
         token: sessionStorage.getItem("token") ? sessionStorage.getItem("token") : null,
         sync: sessionStorage.getItem("token") ? "로그아웃" : "로그인"
     };
@@ -19,6 +19,18 @@ class Header extends React.Component {
 
     onSetSidebarOpen(open) {
         this.setState({ sidebarOpen: open });
+    }
+
+    componentDidMount() {
+        if (location.href.includes("Game") === true) {
+            this.setState({ title: "대림 게임 클래스"});
+        } else if(location.href.includes("Guest") === true) {
+            this.setState({ title: "방명록"});
+        } else if(location.href.includes("Contest") === true) {
+            this.setState({ title: "공모전 "});
+        } else {
+            this.setState({ title: "Daelim Festival"});
+        }
     }
 
     logOut(log_token) {
@@ -74,6 +86,9 @@ class Header extends React.Component {
                             <Link to="/Game">
                                 <p className="sidebar">대림게임토너먼트</p>
                             </Link>
+                            <Link to="/Contest">
+                                <p className="sidebar">공모전</p>
+                            </Link>
                             {this.logInOut()}
                         </div>
                     }
@@ -104,8 +119,7 @@ class Header extends React.Component {
                 <IconContext.Provider value={{
                     style: {
                         width: "100%",
-                        height: "100%",
-                        color: "black"
+                        height: "100%"
                     }
                 }}>
                     <div className="home">

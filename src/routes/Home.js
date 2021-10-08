@@ -1,13 +1,12 @@
 import React from "react";
-// import { executeQuery } from "../common/commonFunc";
 import { Link } from "react-router-dom";
 import Header from "../common/header.js";
-// import Stamp from "./Stamp.js";
 import { IconContext } from "react-icons";
 import { FaStamp, FaGamepad } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiFillTrophy } from "react-icons/ai";
 import Modal from "react-modal";
 import StampPage from "../images/stamppage.png";
+import GuestBookImage from "../images/guestbook.png";
 import "./Home.css";
 import "animate.css";
 
@@ -68,6 +67,16 @@ class Home extends React.Component {
                     <div className="game">
                         <Link to="Game">
                             <FaGamepad />
+                        </Link>
+                    </div>
+                    <div className="contest animate__animated animate__heartBeat animate__infinite">
+                        <Link to="Contest">
+                            <AiFillTrophy />
+                        </Link>
+                    </div>
+                    <div className="">
+                        <Link to="Guest-Book">
+                            <img src={GuestBookImage} alt="방명록" className="guestbook animate__animated animate__swing animate__infinite animate__slower" />
                         </Link>
                     </div>
                 </IconContext.Provider>

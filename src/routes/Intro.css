@@ -7,10 +7,10 @@
     justify-content: center;
     align-items: center;
 }
-.link{
+.daelimlink{
     background-color: black;
 }
-.link a{
+.daelimlink a{
     background-color: black;
     animation-name: estelas;
     animation-duration: 2s;

@@ -1,22 +1,26 @@
-*{
+.conWrap_header {
+    width: 100%;
+    background-color: #0077FF;
+}
+
+.contest_content_wrap {
+    width: 70%;
+    margin: 50px auto;
     background-color: white;
     text-align: left;
 }
-.conWrap{
-    width: 70%;
-    margin: 50px auto;
-}
-.conWrap p{
+
+.contest_content_wrap p{
     font-size: 15px;
     color: #888888;
     background-color: white;
 }
-.conWrap h1{
+.contest_content_wrap h1{
     font-weight: bold;
     color: #555555;
     margin-bottom: 16px;
 }
-.conWrap ul{
+.contest_content_wrap ul{
     font-size: 15px;
     color: #888888;
 }
@@ -46,7 +50,7 @@
     margin: 0;
     color: #999999;
 }
-a{
+.contest_content_wrap a{
     color: black;
     text-decoration: none;
     background-color: white;

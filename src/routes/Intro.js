@@ -26,7 +26,7 @@ class intro extends Component{
     render(){
 
         return(
-            <div className={'main_wrap'}>
+            <div className='main_wrap'>
 
                 <div className="star animate__zoomOut">
                     <TiStarburstOutline color="#fff" className={"far fa-star star1"}/>
@@ -69,24 +69,24 @@ class intro extends Component{
                     <TiStarburstOutline color="#fff" className={"far fa-star star38"}/>
                     <TiStarburstOutline color="#fff" className={"far fa-star star39"}/>
                     <TiStarburstOutline color="#fff" className={"far fa-star star40"}/>
-                    <h1 className={'HALLO'}>&nbsp;HALLO!</h1>
+                    <h1 className='HALLO'>&nbsp;HALLO!</h1>
                     <p>:DAELIM FESTIVAL</p>
                     <p>"별이 빛나는 밤에"</p>
                     <p>2021대림대학교</p>
                 </div>
-                <div  className={'video'}>
-                    <ReactPlayer url={'https://www.youtube.com/watch?v=L1IWrezMsIA'} playing   controls/>
+                <div  className='video'>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=L1IWrezMsIA' playing controls />
                 </div>
 
-                <img className={'poster1'} src={poster1} alt=""/>
-                <div className={'text1'}>
+                <img className='poster1' src={poster1} alt=""/>
+                <div className='text1'>
                     <p>AtristLineUp</p>
                     <p>Guest-part1: 블랙핑크, 소녀시대, 일병 비와이</p>
                     <p>Guest-part2: 에스파, 한효주, 한지민</p>
                 </div>
-                <img className={'sky'} src={sky} alt=""/>
-                <div className={'link'}>
-                    <a href={'https://www.daelim.ac.kr/intro.do'}>대림대학교 더 살펴보기 click</a>
+                <img className='sky' src={sky} alt=""/>
+                <div className='daelimlink'>
+                    <a href='https://www.daelim.ac.kr/intro.do'>대림대학교 더 살펴보기 click</a>
                 </div>
             </div>
 
@@ -94,6 +94,5 @@ class intro extends Component{
     }
 
 }
-
 
 export default intro;

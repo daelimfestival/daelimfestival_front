@@ -1,0 +1,12 @@
+.GuestBook_wrap {
+    display: inline-block;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0095C8;
+    margin-top: 100px;
+}
+
+.GuestBook_header {
+    width: 100%;
+    background-color: #0077FF;
+}
