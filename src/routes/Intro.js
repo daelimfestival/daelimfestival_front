@@ -1,30 +1,13 @@
 import React, { Component, useRef, useState } from "react";
 import ReactPlayer from 'react-player'
 import "./Intro.css";
-import poster1 from './img/poster1.png';
-import Moon from './img/pngegg.png';
-import sky from './img/darksky.png';
-import symbol from './img/symbol2.png';
+import poster1 from '../img/poster1.png';
+import sele from '../img/sele.png';
 import { TiStarburstOutline } from 'react-icons/ti';
 import "animate.css";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-
-
-// import Swiper core and required modules
-import SwiperCore, {
-    EffectCards
-} from 'swiper';
-
-
-
-
-
 
 class intro extends Component{
     render(){
-
         return(
             <div className='main_wrap'>
 
@@ -89,10 +72,9 @@ class intro extends Component{
                     <a href='https://www.daelim.ac.kr/intro.do'>대림대학교 더 살펴보기 click</a>
                 </div>
             </div>
-
         )
     }
 
-}
+
 
 export default intro;
