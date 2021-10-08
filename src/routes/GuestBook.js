@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../common/header';
 import Form from 'react-bootstrap/Form';
+import { IconContext } from "react-icons";
 import { FaCommentAlt } from "react-icons/fa";
 import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
@@ -33,6 +34,14 @@ class GuestBook extends React.Component {
                             </Button>
                         </Form.Group>
                         <Form.Group>
+                            <IconContext.Provider value={{
+                                style: {
+                                    width: "25px",
+                                    height: "25px"
+                                }
+                            }}>
+                                <FaCommentAlt />
+                            </IconContext.Provider>
                             <p className="commentlength">{this.state.comment}</p>
                             <Form.Control />
                         </Form.Group>

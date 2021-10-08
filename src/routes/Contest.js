@@ -2,10 +2,59 @@ import React from 'react';
 import Header from "../common/header.js";
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "./Contest.css";
+import Cartoon from './Cartoon';
+import Literature from './Literature';
+import Video from './Video';
 
 class Con extends React.Component {
+    state = {
+        showCartoon: false,
+        showLiterature: false,
+        showVideo: false
+    };
+
+    openCartoon = this.openCartoon.bind(this);
+    openLiterature = this.openLiterature.bind(this);
+    openVideo = this.openVideo.bind(this);
+
+    openCartoon() {
+        this.setState({
+            showCartoon: true,
+            showLiterature: false,
+            showVideo: false
+        });
+        return this.state.showCartoon ? <Cartoon /> : null 
+    }
+
+    openLiterature() {
+        this.setState({
+            showCartoon: false,
+            showLiterature: true,
+            showVideo: false
+        });
+        return this.state.showLiterature ? <Literature /> : null
+    }
+    
+    openVideo() {
+        this.setState({
+            showCartoon: false,
+            showLiterature: false,
+            showVideo: true
+        });
+        return this.state.showVideo ? <Video /> : null
+    }
+
+    // test() {
+    //     if () {
+    //         return <Cartoon />
+    //     } else if () {
+    //         return <Literature />
+    //     } else {
+    //         return <Video />
+    //     }
+    // }
 
     render() {
         return (
@@ -26,9 +75,9 @@ class Con extends React.Component {
                         <li>제출하기를 누르면 스탬프 1개 지급!</li>
                     </ul>
                     <ListGroup horizontal>
-                        <ListGroup.Item><Link to='/Contest/cartoon'>만화</Link></ListGroup.Item>
-                        <ListGroup.Item><Link to='/Contest/literature'>문학</Link></ListGroup.Item>
-                        <ListGroup.Item><Link to='/Contest/video'>영상</Link></ListGroup.Item>
+                        <ListGroup.Item onClick={() => this.openCartoon()}>만화</ListGroup.Item>
+                        <ListGroup.Item onClick={() => this.openLiterature()}>문학</ListGroup.Item>
+                        <ListGroup.Item onClick={() => this.openVideo()}>영상</ListGroup.Item>
                     </ListGroup>
                     <div>
                         {/* <cartoon1 /> */}

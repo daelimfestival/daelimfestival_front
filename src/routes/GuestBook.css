@@ -1,12 +1,22 @@
-.GuestBook_wrap {
+.guestbook_wrap {
     display: inline-block;
     flex-direction: column;
     width: 100%;
     background-color: #0095C8;
-    margin-top: 100px;
 }
 
-.GuestBook_header {
+.guestbook_header {
     width: 100%;
+    height: fit-content;
     background-color: #0077FF;
+}
+
+.guestbook_content_wrap {
+    width: 50%;
+    margin-top: 50px;
+}
+
+.commenticon {
+    width: 25px;
+    height: 25px;
 }

@@ -2,7 +2,7 @@ import React, { Component, useRef, useState } from "react";
 import ReactPlayer from 'react-player'
 import "./Intro.css";
 import poster1 from '../img/poster1.png';
-import sele from '../img/sele.png';
+import sele from '../images/sele.png';
 import { TiStarburstOutline } from 'react-icons/ti';
 import "animate.css";
 
