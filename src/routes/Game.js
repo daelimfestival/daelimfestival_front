@@ -13,8 +13,8 @@ class Game extends React.Component {
                     <Header />
                 </div>
                 <div className="game_content_wrap">
-                    <div className="img_wrap">
-                        <img src={Progamer} alt="test" />
+                    <div className="progamer_img_wrap">
+                        <img src={Progamer} alt="test" className="progamer_img" />
                         <p className="progamer_name">Inonix</p>
                     </div>
                     <div className="textarea">
