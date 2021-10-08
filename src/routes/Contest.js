@@ -19,18 +19,14 @@ class Con extends React.Component {
 
     openLiterature() {
         this.setState({
-            showCartoon: false,
-            showLiterature: true,
-            showVideo: false
+            contest_page: <Literature />
         });
         this.state.contest_page = <Literature />
     }
 
     openVideo() {
         this.setState({
-            showCartoon: false,
-            showLiterature: false,
-            showVideo: true
+            contest_page: <Video />
         });
         this.state.contest_page = <Video />
     }
