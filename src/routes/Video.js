@@ -11,7 +11,7 @@ class Video extends Component{
         /*const contentList=video.map((videos)=>(<div className="contentList">{videos}</div>
         ));*/
         return (
-            <div class="contestBox">
+            <div className="contestBox">
                 <div>
                     <img src={video1} alt=""/>
                     <p>[대림 시사콜콜] 대림대 현 상황은? -cultureLand@naver.com-</p>

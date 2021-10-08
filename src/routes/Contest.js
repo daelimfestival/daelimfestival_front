@@ -14,7 +14,7 @@ class Con extends React.Component {
     };
 
     openCartoon() {
-        this.state.contest_page = <Cartoon />
+        return this.state.contest_page
     }
 
     openLiterature() {
