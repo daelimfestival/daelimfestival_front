@@ -51,3 +51,35 @@ a{
     text-decoration: none;
     background-color: white;
 }
+.img1{
+    position: relative;
+}
+.img2{
+    position: relative;
+}
+.img3{
+    position: relative;
+}
+.img4{
+    position: relative;
+}
+.clickE1{
+    right: 5px;
+    bottom: 50px;
+    background-color: transparent;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+.clickE2{
+    right: 5px;
+    bottom: 50px;
+    background-color: transparent;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    color: red;
+}
+.d-grid{
+    width: 100%;
+}
