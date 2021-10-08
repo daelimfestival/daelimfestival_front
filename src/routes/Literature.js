@@ -11,7 +11,7 @@ class Literature extends Component{
                 const contentList=Literature.map((Literatures)=>(<div>{Literatures}</div>));
         */
         return (
-            <div class="contestBox">
+            <div className="contestBox">
                 <div>
                     <img src={literature1} alt="" type="button" onClick={this.openPopup}/>
                     <p>코로나에 관하여 -seoPro-</p>

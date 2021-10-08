@@ -121,7 +121,7 @@ class Cartoon extends Component{
     }
     render(){
         return (
-            <form class="contestBox">
+            <form className="contestBox">
                 <IconContext.Provider value={{
                     style: {
                         width: "100%",
