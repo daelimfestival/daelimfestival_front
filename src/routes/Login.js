@@ -55,10 +55,10 @@ function Login(props) {
                     <div className="login_logo">
                         <img src={Logo} alt="daelim logo" />
                     </div>
-                    <Form.Group controlId="member_id">
+                    <Form.Group>
                         <Form.Control className="login_inputid" type="text" placeholder="ID" value={inputId} onChange={onChangeInputId} />
                     </Form.Group>
-                    <Form.Group controlId="password">
+                    <Form.Group>
                         <Form.Control className="login_inputpwd" type="password" placeholder="Password" value={inputPassword} onChange={onChangeInputPassword} />
                     </Form.Group>
                     <Button className="login_button" variant="primary" type="submit">

@@ -30,17 +30,16 @@
 }
 
 .login_inputid {
-    width: 400px;
+    width: 400px !important;
     height: 50px;
-    line-height: 50px;
-    padding: 0 50px;
-    margin-top: 50px;
-    border-radius: 30px;
-    border: none;
-    background-color: #EBEBEB;
+    padding: 0 50px !important;
+    margin: 50px auto 0;
+    border-radius: 30px !important;
+    border: none !important;
+    background-color: #EBEBEB !important;
     box-sizing: border-box;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 16px !important;
+    font-weight: bold !important;
 }
 
 .login_inputid::placeholder {
@@ -48,17 +47,16 @@
 }
 
 .login_inputpwd {
-    width: 400px;
+    width: 400px !important;
     height: 50px;
-    line-height: 50px;
-    padding: 0 50px;
-    margin-top: 20px;
-    border-radius: 30px;
-    border: none;
-    background-color: #EBEBEB;
+    padding: 0 50px !important;
+    margin: 20px auto 0;
+    border-radius: 30px !important;
+    border: none !important;
+    background-color: #EBEBEB !important;
     box-sizing: border-box;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 16px !important;
+    font-weight: bold !important;
 }
 
 .login_inputpwd::placeholder {
@@ -68,13 +66,11 @@
 .login_button {
     width: 400px;
     height: 50px;
-    line-height: 50px;
     margin-top: 80px;
-    border-radius: 30px;
-    border: none;
-    background-color: #272727;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+    border-radius: 30px !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
 }
