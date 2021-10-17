@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../common/header.js";
 import { IconContext } from "react-icons";
-import { FaGamepad } from "react-icons/fa";
 import { AiOutlineClose, AiFillTrophy } from "react-icons/ai";
 import Modal from "react-modal";
 import StampPage from "../images/stamppage.png";
 import GuestBookImage from "../images/guestbook.png";
 import StampImage from "../images/stamp.png";
+import GamePad from "../images/game.png";
 import "./Home.css";
 import "animate.css";
 
@@ -46,41 +46,43 @@ class Home extends React.Component {
         return (
             <div id="wrap">
                 <Header />
-                <div className="stamp animate__animated animate__bounce animate__infinite animate__slower" onClick={this.handleOpenModal}>
-                    <img src={StampImage} alt="stamp"/>
-                </div>
-                <IconContext.Provider value={{
-                    style: {
-                        width: "100%",
-                        height: "100%"
-                    }
-                }}>
-                    <Modal
-                        isOpen={this.state.showModal}
-                        style={modalStyles}
-                        onRequestClose={this.handleCloseModal}
-                        ariaHideApp={false}
-                    >
-                        <div className="closebtn">
-                            <AiOutlineClose onClick={this.handleCloseModal} />
+                <div className="bgimg">
+                    <div className="stamp animate__animated animate__bounce animate__infinite animate__slower" onClick={this.handleOpenModal}>
+                        <img src={StampImage} alt="stamp"/>
+                    </div>
+                    <IconContext.Provider value={{
+                        style: {
+                            width: "100%",
+                            height: "100%"
+                        }
+                    }}>
+                        <Modal
+                            isOpen={this.state.showModal}
+                            style={modalStyles}
+                            onRequestClose={this.handleCloseModal}
+                            ariaHideApp={false}
+                        >
+                            <div className="closebtn">
+                                <AiOutlineClose onClick={this.handleCloseModal} />
+                            </div>
+                        </Modal>
+                        <div className="game animate__animated animate__jello animate__infinite animate__slower">
+                            <Link to="Game">
+                                <img src={GamePad} alt="대림게임클래스" />
+                            </Link>
                         </div>
-                    </Modal>
-                    <div className="game">
-                        <Link to="Game">
-                            <FaGamepad />
-                        </Link>
-                    </div>
-                    <div className="contest animate__animated animate__heartBeat animate__infinite animate__slower">
-                        <Link to="Contest">
-                            <AiFillTrophy />
-                        </Link>
-                    </div>
-                    <div className="">
-                        <Link to="Guest-Book">
-                            <img src={GuestBookImage} alt="방명록" className="guestbook animate__animated animate__swing animate__infinite animate__slower" />
-                        </Link>
-                    </div>
-                </IconContext.Provider>
+                        <div className="contest animate__animated animate__heartBeat animate__infinite animate__slower">
+                            <Link to="Contest">
+                                <AiFillTrophy />
+                            </Link>
+                        </div>
+                        <div className="guestbook animate__animated animate__swing animate__infinite animate__slower">
+                            <Link to="Guest-Book">
+                                <img src={GuestBookImage} alt="방명록" />
+                            </Link>
+                        </div>
+                    </IconContext.Provider>
+                </div>
             </div>
         )
     }

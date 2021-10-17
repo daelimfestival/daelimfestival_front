@@ -58,3 +58,7 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+svg:hover {
+  color: black;
+}
