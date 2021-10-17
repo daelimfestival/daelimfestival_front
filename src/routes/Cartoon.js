@@ -14,7 +14,6 @@ import { IconContext } from "react-icons";
 // import loginModal from "../common/loginModal";
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { array } from "prop-types";
 import * as fnc from "../common/commonFunc.js";
 
 const modalStyles = {
@@ -104,7 +103,7 @@ function Cartoon(props) {
 
         let token = sessionStorage.getItem("token");
 
-        let radio_value = m1 == true ? "m1" : (m2 == true ? "m2" : (m3 == true ? "m3" : (m4 == true ? "m4" : null)))
+        let radio_value = m1 === true ? "m1" : (m2 === true ? "m2" : (m3 === true ? "m3" : (m4 === true ? "m4" : null)))
 
         if (!token) {
             alert("로그인 해주세요");
@@ -130,7 +129,7 @@ function Cartoon(props) {
                 json: json
             },
             success: (res) => {
-                alert("투표 완료");
+                alert(res.msg);
             },
         });
     };
