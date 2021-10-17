@@ -6,20 +6,17 @@ import { IconContext } from "react-icons";
 import { FaCommentAlt } from "react-icons/fa";
 import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
-// import InfiniteScroll from 'react-infinite-scroller';
+import axios from 'axios';
 
-// const api = "";
-// const limit = 4;
+const API_LINK = "http://52.79.141.166/action/board/guest_book_data.php";
+const page_add = 1;
 
 class GuestBook extends React.Component {
     state = {
-        productList: [],
-        nickname: "익명", //닉네임 값
-        preItems: 0,
-        items: 25, //댓글 값
+        nickname: "닉네임", //닉네임 값
+        commentLength: "0", //댓글 값
         token: sessionStorage.getItem("token"),
-        // offset: 0,
-        // isLoading: false
+        page: 1,
     };
 
     commentRegist() {
@@ -29,40 +26,48 @@ class GuestBook extends React.Component {
         }
     }
 
-    // loadFunc = () => {
-    //     fetch(`${api}/ootds?offset=${this.state.offset}&limit=${limit}`)
-    //         .then((res) => res.json())
-    //         .then((res) => {
-    //             this.setState({
-    //                 cards: [...this.state.cards, ...res.ootd_list],
-    //                 offset: this.state.offset + limit,
-    //             });
-    //         })
-    // }
+    loadFunc = () => {
+        let current_url = location.href;
 
-    componentDidMount() {
-        fetch("http://52.79.141.166/action/board/guest_book_data.php")
-        .then((res) => res.json())
-        .then((res) => {
-            let result = res.data.list.slice(this.state.preItems, this.state.items);
-            this.setState({
-                productList: [...this.state.productList, ...result],
-            });
-        });
-        window.addEventListener("scroll", this.InfiniteScroll)
+        let json_data = {
+            current_url,
+            token: this.state.token,
+            page: this.state.page
+        };
+
+        let json = btoa(encodeURIComponent(JSON.stringify(json_data)));
+
+        return axios.post(
+            API_LINK,
+            {
+                json: json
+            }
+        ).then((res) => {
+            const result = res.data.list
+
+            console.log(result)
+        })
     }
 
-    InfiniteScroll = () => {
-        let scrollHeight = document.documentElement.scrollHeight;
-        let scrollTop = document.documentElement.scrollTop;
-        let clientHeight = document.documentElement.clientHeight;
-        if (scrollTop + clientHeight >= scrollHeight * 0.95) {
+    InfiniteScrollfnc = () => {
+        let s_height = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+
+        let s_top = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+
+        let c_height = document.documentElement.clientHeight;
+
+        if (s_top + c_height === s_height) {
             this.setState({
-                preItems: this.state.items,
-                items: this.state.items + 25
-            });
-            this.componentDidMount();
+                page: this.state.page + page_add
+            })
+
+            this.loadFunc()
         }
+    }
+
+    componentDidMount() {
+        this.loadFunc()
+        window.addEventListener("scroll", this.InfiniteScrollfnc, true)
     }
 
     onSubmit = (e) => {
@@ -79,7 +84,7 @@ class GuestBook extends React.Component {
                     <Form onSubmit={this.onSubmit}>
                         <Form.Group>
                             <p className="nickname">{this.state.nickname}</p>
-                            <Form.Control className="input_text" type="text" placeholder="내용을 입력하세요"/>
+                            <Form.Control className="input_text" type="text" placeholder="내용을 입력하세요" />
                             <div className="regist_button_wrap">
                                 <Button className="regist_button" variant="primary" type="submit" onClick={() => this.commentRegist()}>
                                     등록
@@ -97,18 +102,12 @@ class GuestBook extends React.Component {
                                     <FaCommentAlt />
                                 </div>
                             </IconContext.Provider>
-                            <p className="comment_length">{this.state.items}</p>
+                            <p className="comment_length">{this.state.commentLength}</p>
                         </div>
-                        {/* <InfiniteScroll
-                            pageStart={0}
-                            loadMore={this.loadFunc}
-                            hasMore={true || false}
-                            loader={<div className="loader" key={0} />}
-                            useWindow={false}
-                        >
-                            <p className="comments">test</p>
-                        </InfiniteScroll> */}
                     </Form>
+                </div>
+                <div>
+                    <p>{ }</p>
                 </div>
             </div>
         )
