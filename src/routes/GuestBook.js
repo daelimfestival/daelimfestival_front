@@ -92,20 +92,20 @@ class GuestBook extends React.Component {
                             <p className="comment_length">{this.state.total}</p>
                         </div>
                     </Form>
+                    <InfiniteScroll
+                        dataLength={this.state.list_data.length} //This is important field to render the next data
+                        next={this.fetchData}
+                        hasMore={this.state.more_data}
+                        loader={<h4>Loading...</h4>}
+                    >
+                        {this.state.list_data.map(brewery => (
+                            <div className="guestbook_content_area">
+                                <p className="guestbook_content_text">{brewery.content}</p>
+                                <p className="guestbook_writedate">{brewery.write_date}</p>
+                            </div>
+                        ))}
+                    </InfiniteScroll>
                 </div>
-                <InfiniteScroll
-                    dataLength={this.state.list_data.length} //This is important field to render the next data
-                    next={this.fetchData}
-                    hasMore={this.state.more_data}
-                    loader={<h4>Loading...</h4>}
-                >
-                    {this.state.list_data.map(brewery => (
-                        <ul className="user" key={brewery.idx}>
-                            <li>내용: {brewery.content}</li>
-                            <li>작성날짜: {brewery.write_date}</li>
-                        </ul>
-                    ))}
-                </InfiniteScroll>
             </div>
         )
     }
