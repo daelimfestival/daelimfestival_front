@@ -4,25 +4,39 @@
 }
 
 .contest_content_wrap {
-    width: 70%;
-    margin: 50px auto;
+    box-sizing: border-box;
+    padding: 20px 100px;
+    width: 100%;
+    margin: 0px;
     background-color: white;
     text-align: left;
 }
 
 .contest_content_wrap p{
-    font-size: 15px;
+    font-size: 1rem;
     color: #888888;
     background-color: white;
 }
 .contest_content_wrap h1{
+    font-size: 2rem;
     font-weight: bold;
     color: #555555;
-    margin-bottom: 16px;
+    margin: 10px 0 10px 0;
 }
 .contest_content_wrap ul{
-    font-size: 15px;
+    margin-left: 20px;
+    list-style: decimal;
+    font-size: 1rem;
     color: #888888;
+}
+.contest_content_wrap li{
+    margin-bottom: 10px;
+}
+.contest_content_wrap ol{
+    margin-left: 20px;
+    list-style: initial;
+    font-size: 1rem;
+    color: #444444;
 }
 .contestBox{
     width: 100%;
@@ -30,7 +44,7 @@
     padding-top: 50px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-flow: row wrap;
 }
 .list-group{
@@ -77,30 +91,25 @@
 }
 .clickE1{
     right: 5px;
-    bottom: 50px;
+    bottom: 40px;
     background-color: transparent;
     position: absolute;
     width: 30px;
     height: 30px;
-}
-.clickE2{
-    right: 5px;
-    bottom: 50px;
-    background-color: transparent;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    color: red;
 }
 .d-grid{
     width: 100%;
 }
 .alert{
     position: fixed;
+    width: 400px;
     top: 50%;
+    right: 35%;
 }
 .alert Button{
-    border-color: gray;
+    border: 2px solid gray;
+    color: black;
+    font-weight: bold;
 }
 .alert a{
     background-color: transparent;

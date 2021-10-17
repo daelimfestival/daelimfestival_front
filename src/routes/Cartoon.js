@@ -25,8 +25,10 @@ const modalStyles = {
         backgroundColor: '#272727'
     },
     content: {
-        width: '600px',
-        height: '400px',
+        position: 'absolute',
+        left: '20%',
+        width: '800px',
+        height: '600px',
         border: '1px solid #ccc',
         background: '#fff',
         overflow: 'auto',
@@ -273,7 +275,7 @@ function Cartoon(props) {
                 </Button>
             </div>
 
-            <Alert show={show} variant="primary" className={"animate__animated animate__fadeInUp"}>
+            <Alert show={show} variant="dark" className={"animate__animated animate__fadeInUp"}>
                 <CloseButton onClick={() => setShow(false)} />
                 <Alert.Heading>로그인이 필요합니다.</Alert.Heading>
                 <hr />
