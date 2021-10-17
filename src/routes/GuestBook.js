@@ -8,7 +8,7 @@ import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
 import InfiniteScroll from 'react-infinite-scroller';
 
-const api = "";
+const api = "http://52.79.141.166/";
 const limit = 4;
 
 class GuestBook extends React.Component {
