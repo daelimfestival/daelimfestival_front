@@ -49,10 +49,13 @@ class Header extends React.Component {
                 json: json
             },
             success: (res) => {
-                sessionStorage.removeItem("token", res.token);
+                sessionStorage.removeItem("token");
                 window.location.reload()
             }
         });
+
+        sessionStorage.removeItem("token");
+        window.location.reload()
     }
 
     logInOut() {
