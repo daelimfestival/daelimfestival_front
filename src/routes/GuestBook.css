@@ -12,9 +12,8 @@
 
 .guestbook_content_wrap {
     position: relative;
-    /* display: flex; */
     width: 50%;
-    margin-top: 50px;
+    margin: 50px auto 0;
 }
 
 .nickname {
@@ -79,7 +78,7 @@
     line-height: 100px;
     background-color: #FFFFFF;
     text-align: left;
-    padding: 0 .75rem;
+    padding: 0.75rem;
     margin-top: 50px;
     border-radius: 0.25rem;
 }
@@ -91,23 +90,19 @@
     margin-bottom: 50px;
 }
 
-.guestbook_wrap::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
-}
-
 .guestbook_content_nickname {
     font-weight: bold;
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .guestbook_content_text {
-    height: fit-content;
-    border-radius: 0.25rem;
-    margin-bottom: 5px;
+    line-height: 25px;
+    margin-bottom: 10px;
 }
 
 .guestbook_writedate {
+    font-family: '나눔 고딕', NanumGothic, sans-serif;
     margin-bottom: 20px;
     font-weight: bold;
 }

@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../common/header.js";
 import { IconContext } from "react-icons";
-import { FaStamp, FaGamepad } from "react-icons/fa";
+import { FaGamepad } from "react-icons/fa";
 import { AiOutlineClose, AiFillTrophy } from "react-icons/ai";
 import Modal from "react-modal";
 import StampPage from "../images/stamppage.png";
 import GuestBookImage from "../images/guestbook.png";
+import StampImage from "../images/stamp.png";
 import "./Home.css";
 import "animate.css";
 
@@ -45,15 +46,15 @@ class Home extends React.Component {
         return (
             <div id="wrap">
                 <Header />
+                <div className="stamp animate__animated animate__bounce animate__infinite animate__slower" onClick={this.handleOpenModal}>
+                    <img src={StampImage} alt="stamp"/>
+                </div>
                 <IconContext.Provider value={{
                     style: {
                         width: "100%",
                         height: "100%"
                     }
                 }}>
-                    <div className="stamp animate__animated animate__bounce animate__infinite animate__slower" onClick={this.handleOpenModal}>
-                        <FaStamp />
-                    </div>
                     <Modal
                         isOpen={this.state.showModal}
                         style={modalStyles}
