@@ -26,6 +26,7 @@ export const executeQuery = ({
             }
         })
         .catch((err) => {
-            alert(err.response.data.msg)
+            alert(err.response.data.msg);
+            location.reload();
         });
 };

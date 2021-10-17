@@ -51,12 +51,13 @@ class GuestBook extends React.Component {
             {
                 json: json
             }
-        ).then(res =>
+        ).then(res => {
             this.setState({
                 total: this.state.total === 0 ? res.data.total : 0,
                 list_data: [...this.state.list_data, ...res.data.list],
                 page: this.state.page + 1
             })
+        }
         );
     };
 
@@ -151,7 +152,6 @@ class GuestBook extends React.Component {
                         dataLength={this.state.list_data.length}
                         next={this.fetchData}
                         hasMore={this.state.more_data}
-                        loader={<h4>Loading...</h4>}
                     >
                         {this.state.list_data.map(brewery => (
                             <div className="guestbook_content_area" key={brewery.idx}>
