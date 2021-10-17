@@ -100,6 +100,7 @@ class GuestBook extends React.Component {
                     >
                         {this.state.list_data.map(brewery => (
                             <div className="guestbook_content_area">
+                                <p className="guestbook_content_nickname">{this.state.nickname}</p>
                                 <p className="guestbook_content_text">{brewery.content}</p>
                                 <p className="guestbook_writedate">{brewery.write_date}</p>
                             </div>
