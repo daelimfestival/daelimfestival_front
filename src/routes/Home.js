@@ -17,6 +17,7 @@ const modalStyles = {
     },
     content: {
         top: '100px',
+        margin: '0 auto',
         textAlign: 'center',
         width: '566px',
         height: '785px',
