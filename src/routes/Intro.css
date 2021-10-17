@@ -12,21 +12,26 @@
     margin: 0;
     padding: 0;
 }
+.tsparticles-canvas-el{
+    position: absolute;
+}
 .comment{
     position: relative;
     display: flex;
     flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 400px;
+    height: 600px;
     background-color: transparent;
-    margin-top: 100px;
-    margin: 100px auto 0 auto;
+    box-sizing: border-box;
+    padding-left: 300px;
 }
 .comment img{
-    width: 300px;
-    margin: 0;
+    width: 500px;
+    height: 600px;
+    --animate-duration: 2s;
+    margin-left: 0px;
 }
 .comment h1{
     color: #c0c0c0;
@@ -73,7 +78,7 @@
     font-weight: bold;
     background-color: transparent;
     box-sizing: border-box;
-    padding-left: 110px;
+    padding-left: 190px;
     text-align: left;
     margin: 0 0 70px 0;
     transition: 0.1s;
@@ -138,7 +143,7 @@
     width: 250px;
     height: 150px;
     background-color: transparent;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .leftLine{
     border-left: 1px solid #c0c0c0;
@@ -173,24 +178,25 @@
 }
 .celebration{
     width: 100%;
-    height: 1300px;
+    height: 1500px;
     box-sizing: border-box;
-    padding: 30px 300px 0 300px;
+    padding: 30px 130px 0 130px;
     background: linear-gradient( to bottom, #B884CB, #1D252D);
 }
 .celebration img{
-    width: 60%;
-    position: absolute;
+    width: 100%;
+    right: 10%;
     margin-top: 500px;
 }
 .celebration p{
     color: #c0c0c0;
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 .celebration h1{
     color: #c0c0c0;
     background-color: transparent;
+    font-size: 3rem;
 }
 .celebration b{
     color: #c0c0c0;
@@ -202,8 +208,8 @@
     color: #c0c0c0;
     position: absolute;
     right: 0;
-    margin-right: 300px;
-    font-size: 1rem;
+    margin-right: 150px;
+    font-size: 1.2rem;
     width: 500px;
     height: 600px;
     overflow: auto;
@@ -215,9 +221,6 @@
 }
 
 /* 해당 요소에만 적용 */
-.poster1 {
-    --animate-duration: 2s;
-}
 .sky{
     position: absolute;
     width: 100%;
@@ -234,12 +237,13 @@
     background-color: transparent;
 }
 .link a {
-    position: absolute;
-    background-color: transparent;
-    font-size: 2rem;
-    animation: linear;
-    animation-delay: 1s;
+    color:#2580a2;
+    -moz-transition:color .2s ease;
+    -o-transition:color .2s ease;
+    -ms-transition:color .2s ease;
+    -webkit-transition:color .2s ease;
+    transition:color .2s ease;
 }
 .link a:hover{
-    color: aquamarine;
+    color:#666666;
 }

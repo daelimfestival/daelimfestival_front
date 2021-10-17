@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import ReactPlayer from 'react-player'
+import Header from "../common/header.js";
 import "./Intro.css";
 import poster1 from '../images/poster1.png';
+import letter from '../images/letter.png';
 import sele from '../images/sele.png';
 import "animate.css";
 import Particles from "react-particles-js";
@@ -10,6 +12,7 @@ class intro extends Component {
     render() {
         return (
             <div className={'main_wrap'}>
+                <Header/>
                 <div className={'sky'}>
                     <Particles params={particlesParams} />
                 </div>
