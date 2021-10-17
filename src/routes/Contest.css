@@ -4,7 +4,7 @@
 }
 
 .contest_content_wrap {
-    width: 70%;
+    width: 80%;
     margin: 50px auto;
     background-color: white;
     text-align: left;
@@ -25,11 +25,19 @@
     color: #888888;
 }
 .contestBox{
-    width: 70%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 50px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
+}
+.list-group{
+    position: absolute;
+    width: 45%;
+    text-align: center;
+    font-weight: bold;
 }
 .contentList{
     width: 45%;
@@ -86,4 +94,15 @@
 }
 .d-grid{
     width: 100%;
+}
+.alert{
+    position: fixed;
+    top: 50%;
+}
+.alert Button{
+    border-color: gray;
+}
+.alert a{
+    background-color: transparent;
+    font-weight: bold;
 }

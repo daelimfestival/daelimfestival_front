@@ -13,8 +13,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons";
 // import loginModal from "../common/loginModal";
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
+import CloseButton from 'react-bootstrap/CloseButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as fnc from "../common/commonFunc.js";
+import "animate.css";
 
 const modalStyles = {
     overlay: {
@@ -106,8 +109,7 @@ function Cartoon(props) {
         let radio_value = m1 === true ? "m1" : (m2 === true ? "m2" : (m3 === true ? "m3" : (m4 === true ? "m4" : null)))
 
         if (!token) {
-            alert("로그인 해주세요");
-
+            let moveLogin = setShow(true);
             return 0;
         } else if (!radio_value) {
             alert("투표할 만화를 선택해주세요");
@@ -139,6 +141,7 @@ function Cartoon(props) {
         vote();
     }
 
+    const [show, setShow] = useState(false);
     return (
         <form className="contestBox" onSubmit={onSubmit}>
             <IconContext.Provider value={{
@@ -272,7 +275,22 @@ function Cartoon(props) {
                     투표하기
                 </Button>
             </div>
+
+            <Alert show={show} variant="dark" className={"animate__animated animate__fadeInUp"}>
+                <CloseButton onClick={()=>setShow(false)}/>
+                <Alert.Heading>로그인이 필요합니다. 로그인하시겠습니까?</Alert.Heading>
+                <hr />
+                <div className="d-flex justify-content-around">
+                    <Button onClick={() => setShow(false)} variant="outline-success">
+                        <a href={'http://localhost:3000/Login'}>로그인하러가기</a>
+                    </Button>
+                    <Button onClick={() => setShow(false)} variant="outline-success">
+                        <a href={'http://localhost:3000'}>메인으로 이동하기</a>
+                    </Button>
+                </div>
+            </Alert>
         </form>
+
     );
 }
 
