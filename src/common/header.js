@@ -80,14 +80,17 @@ class Header extends React.Component {
                 <Sidebar
                     sidebar={
                         <div>
+                            <Link to="/intro">
+                                <p className="sidebar">소개</p>
+                            </Link>
                             <Link to="/Guest-Book">
                                 <p className="sidebar">방명록</p>
                             </Link>
-                            <Link to="/Game">
-                                <p className="sidebar">대림게임토너먼트</p>
-                            </Link>
                             <Link to="/Contest">
                                 <p className="sidebar">공모전</p>
+                            </Link>
+                            <Link to="/Game">
+                                <p className="sidebar">대림게임토너먼트</p>
                             </Link>
                             {this.logInOut()}
                         </div>
