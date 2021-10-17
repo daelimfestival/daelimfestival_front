@@ -6,20 +6,40 @@ import { IconContext } from "react-icons";
 import { FaCommentAlt } from "react-icons/fa";
 import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
-import { useInView } from 'react-intersection-observer';
+import InfiniteScroll from 'react-infinite-scroller';
+
+const api = "http://52.79.141.166/";
+const limit = 4;
 
 class GuestBook extends React.Component {
     state = {
-        nickname: "", //닉네임 값
-        comment: "test", //댓글 값
-        token: sessionStorage.getItem("token")
+        nickname: "닉네임", //닉네임 값
+        commentLength: "0", //댓글 값
+        token: sessionStorage.getItem("token"),
+        offset: 0,
+        isLoading: false
     };
 
     commentRegist() {
         if (!this.state.token) {
-            alert("로그인 후 이용이 가능합니다.");
-            location.href = "/Login";
+            alert("로그인 후에 이용이 가능합니다.")
+            location.href = "/Login"
         }
+    }
+
+    loadFunc = () => {
+        fetch(`${api}/ootds?offset=${this.state.offset}&limit=${limit}`)
+            .then((res) => res.json())
+            .then((res) => {
+                this.setState({
+                    cards: [...this.state.cards, ...res.ootd_list],
+                    offset: this.state.offset + limit,
+                });
+            })
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();
     }
 
     render() {
@@ -29,15 +49,17 @@ class GuestBook extends React.Component {
                     <Header />
                 </div>
                 <div className="guestbook_content_wrap">
-                    <Form>
+                    <Form onSubmit={this.onSubmit}>
                         <Form.Group>
-                            <Form.Control className="input_nickname" type="text" placeholder="닉네임" value={this.state.nickname} />
+                            <p className="nickname">{this.state.nickname}</p>
                             <Form.Control className="input_text" type="text" placeholder="내용을 입력하세요"/>
-                            <Button className="regist_button" variant="primary" type="submit" onClick={() => this.commentRegist()}>
-                                등록
-                            </Button>
+                            <div className="regist_button_wrap">
+                                <Button className="regist_button" variant="primary" type="submit" onClick={() => this.commentRegist()}>
+                                    등록
+                                </Button>
+                            </div>
                         </Form.Group>
-                        <Form.Group>
+                        <div className="comment_length_wrap">
                             <IconContext.Provider value={{
                                 style: {
                                     width: "100%",
@@ -48,8 +70,17 @@ class GuestBook extends React.Component {
                                     <FaCommentAlt />
                                 </div>
                             </IconContext.Provider>
-                            <span className="comment_length"></span>
-                        </Form.Group>
+                            <p className="comment_length">{this.state.commentLength}</p>
+                        </div>
+                        <InfiniteScroll
+                            pageStart={0}
+                            loadMore={this.loadFunc}
+                            hasMore={true || false}
+                            loader={<div className="loader" key={0} />}
+                            useWindow={false}
+                        >
+                            <p className="comments">test</p>
+                        </InfiniteScroll>
                     </Form>
                 </div>
             </div>

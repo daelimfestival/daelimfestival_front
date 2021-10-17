@@ -77,9 +77,6 @@ class Header extends React.Component {
                 <Sidebar
                     sidebar={
                         <div>
-                            <Link to="/Goods">
-                                <p className="sidebar">굿즈</p>
-                            </Link>
                             <Link to="/Guest-Book">
                                 <p className="sidebar">방명록</p>
                             </Link>

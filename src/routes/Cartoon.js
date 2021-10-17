@@ -119,7 +119,7 @@ function Cartoon(props) {
 
         let json_data = {
             current_url,
-            token : token,
+            token: token,
             vote: radio_value
         };
 
