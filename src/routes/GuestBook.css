@@ -106,3 +106,9 @@
     margin-bottom: 20px;
     font-weight: bold;
 }
+
+.alert_div {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}

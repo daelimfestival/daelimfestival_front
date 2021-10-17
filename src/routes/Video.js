@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Contest.css";
-// import ReactPlayer from 'react-player';
 import video1 from '../images/video1.png';
 
 class Video extends Component {
