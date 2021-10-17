@@ -97,7 +97,7 @@ class GuestBook extends React.Component {
                                     <FaCommentAlt />
                                 </div>
                             </IconContext.Provider>
-                            <p className="comment_length">{this.state.commentLength}</p>
+                            <p className="comment_length">{this.state.items}</p>
                         </div>
                         {/* <InfiniteScroll
                             pageStart={0}
