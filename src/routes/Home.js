@@ -51,7 +51,7 @@ class Home extends React.Component {
                         height: "100%"
                     }
                 }}>
-                    <div className="stamp animate__animated animate__bounce animate__infinite" onClick={this.handleOpenModal}>
+                    <div className="stamp animate__animated animate__bounce animate__infinite animate__slower" onClick={this.handleOpenModal}>
                         <FaStamp />
                     </div>
                     <Modal
@@ -69,7 +69,7 @@ class Home extends React.Component {
                             <FaGamepad />
                         </Link>
                     </div>
-                    <div className="contest animate__animated animate__heartBeat animate__infinite">
+                    <div className="contest animate__animated animate__heartBeat animate__infinite animate__slower">
                         <Link to="Contest">
                             <AiFillTrophy />
                         </Link>

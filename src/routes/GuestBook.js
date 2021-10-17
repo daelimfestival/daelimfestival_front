@@ -96,7 +96,7 @@ class GuestBook extends React.Component {
                 <InfiniteScroll
                     dataLength={this.state.list_data.length} //This is important field to render the next data
                     next={this.fetchData}
-                    more_data={this.state.more_data}
+                    hasMore={this.state.more_data}
                     loader={<h4>Loading...</h4>}
                 >
                     {this.state.list_data.map(brewery => (
