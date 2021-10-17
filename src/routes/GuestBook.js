@@ -6,18 +6,20 @@ import { IconContext } from "react-icons";
 import { FaCommentAlt } from "react-icons/fa";
 import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
-import InfiniteScroll from 'react-infinite-scroller';
+// import InfiniteScroll from 'react-infinite-scroller';
 
-const api = "http://52.79.141.166/";
-const limit = 4;
+// const api = "";
+// const limit = 4;
 
 class GuestBook extends React.Component {
     state = {
-        nickname: "닉네임", //닉네임 값
-        commentLength: "0", //댓글 값
+        productList: [],
+        nickname: "익명", //닉네임 값
+        preItems: 0,
+        items: 25, //댓글 값
         token: sessionStorage.getItem("token"),
-        offset: 0,
-        isLoading: false
+        // offset: 0,
+        // isLoading: false
     };
 
     commentRegist() {
@@ -27,15 +29,40 @@ class GuestBook extends React.Component {
         }
     }
 
-    loadFunc = () => {
-        fetch(`${api}/ootds?offset=${this.state.offset}&limit=${limit}`)
-            .then((res) => res.json())
-            .then((res) => {
-                this.setState({
-                    cards: [...this.state.cards, ...res.ootd_list],
-                    offset: this.state.offset + limit,
-                });
-            })
+    // loadFunc = () => {
+    //     fetch(`${api}/ootds?offset=${this.state.offset}&limit=${limit}`)
+    //         .then((res) => res.json())
+    //         .then((res) => {
+    //             this.setState({
+    //                 cards: [...this.state.cards, ...res.ootd_list],
+    //                 offset: this.state.offset + limit,
+    //             });
+    //         })
+    // }
+
+    componentDidMount() {
+        fetch("http://52.79.141.166/action/board/guest_book_data.php")
+        .then((res) => res.json())
+        .then((res) => {
+            let result = res.data.list.slice(this.state.preItems, this.state.items);
+            this.setState({
+                productList: [...this.state.productList, ...result],
+            });
+        });
+        window.addEventListener("scroll", this.InfiniteScroll)
+    }
+
+    InfiniteScroll = () => {
+        let scrollHeight = document.documentElement.scrollHeight;
+        let scrollTop = document.documentElement.scrollTop;
+        let clientHeight = document.documentElement.clientHeight;
+        if (scrollTop + clientHeight >= scrollHeight * 0.95) {
+            this.setState({
+                preItems: this.state.items,
+                items: this.state.items + 25
+            });
+            this.componentDidMount();
+        }
     }
 
     onSubmit = (e) => {
@@ -72,7 +99,7 @@ class GuestBook extends React.Component {
                             </IconContext.Provider>
                             <p className="comment_length">{this.state.commentLength}</p>
                         </div>
-                        <InfiniteScroll
+                        {/* <InfiniteScroll
                             pageStart={0}
                             loadMore={this.loadFunc}
                             hasMore={true || false}
@@ -80,7 +107,7 @@ class GuestBook extends React.Component {
                             useWindow={false}
                         >
                             <p className="comments">test</p>
-                        </InfiniteScroll>
+                        </InfiniteScroll> */}
                     </Form>
                 </div>
             </div>
