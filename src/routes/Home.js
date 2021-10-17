@@ -5,7 +5,10 @@ import { IconContext } from "react-icons";
 import { AiOutlineClose, AiFillTrophy } from "react-icons/ai";
 import Modal from "react-modal";
 import StampPage from "../images/stamppage.png";
-import GuestBookImage from "../images/guestbook.png";
+import GuestBookImage from "../images/guestbook1.png";
+import trophy from "../images/trophy.png";
+import intro from "../images/pxArt.png";
+
 import StampImage from "../images/stamp.png";
 import GamePad from "../images/game.png";
 import "./Home.css";
@@ -74,12 +77,17 @@ class Home extends React.Component {
                         </div>
                         <div className="contest animate__animated animate__heartBeat animate__infinite animate__slower">
                             <Link to="Contest">
-                                <AiFillTrophy />
+                                <img src={trophy} alt="공모전" />
                             </Link>
                         </div>
                         <div className="guestbook animate__animated animate__swing animate__infinite animate__slower">
                             <Link to="Guest-Book">
                                 <img src={GuestBookImage} alt="방명록" />
+                            </Link>
+                        </div>
+                        <div className="intro animate__animated animate__swing animate__infinite animate__slower">
+                            <Link to="intro">
+                                <img src={intro} alt="소개" />
                             </Link>
                         </div>
                     </IconContext.Provider>
