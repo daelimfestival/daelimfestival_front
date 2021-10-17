@@ -26,10 +26,6 @@ export const executeQuery = ({
             }
         })
         .catch((err) => {
-            if (fail) {
-                fail(err);
-            } else {
-                alert("서버접속에 실패하였습니다. 관리자에게 문의해주시기 바랍니다.");
-            }
+            alert(err.response.data.msg)
         });
 };
