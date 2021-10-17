@@ -8,6 +8,7 @@ import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from 'axios';
+import * as fnc from "../common/commonFunc.js";
 
 const API_LINK = "http://52.79.141.166/action/board/guest_book_data.php";
 
@@ -18,11 +19,18 @@ class GuestBook extends React.Component {
         list_data: [],
         total: 0,
         page: 1,
-        more_data: true
+        more_data: true,
+        inputContent: ""
     };
 
     componentDidMount() {
         this.fetchData()
+    }
+
+    onChangeInputContent = (e) => {
+        this.setState({
+            inputContent: e.target.value
+        })
     }
 
     fetchData = async () => {
@@ -54,8 +62,33 @@ class GuestBook extends React.Component {
         if (!this.state.token) {
             alert("로그인 후에 이용이 가능합니다.")
             location.href = "/Login"
+        } else {
+            this.getData();
         }
     }
+
+    getData = () => {
+        let current_url = location.href;
+
+        let json_data = {
+            current_url,
+            token : this.state.token,
+            content: this.state.inputContent
+        };
+
+        let json = btoa(encodeURIComponent(JSON.stringify(json_data)));
+
+        fnc.executeQuery({
+            url: "action/board/guest_book.php",
+            data: {
+                json: json
+            },
+            success: (res) => {
+                alert(res.msg);
+                location.reload();
+            },
+        });
+    };
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -71,7 +104,7 @@ class GuestBook extends React.Component {
                     <Form onSubmit={this.onSubmit}>
                         <Form.Group>
                             <p className="nickname">{this.state.nickname}</p>
-                            <Form.Control className="input_text" type="text" placeholder="내용을 입력하세요" />
+                            <Form.Control className="input_text" type="text" value={this.state.inputContent} onChange={this.onChangeInputContent} placeholder="내용을 입력하세요" />
                             <div className="regist_button_wrap">
                                 <Button className="regist_button" variant="primary" type="submit" onClick={() => this.commentRegist()}>
                                     등록
