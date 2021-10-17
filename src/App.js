@@ -2,6 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Game from "./routes/Game";
 import Login from "./routes/Login";
+import intro from "./routes/Intro";
 // import Goods from "./routes/Goods";
 // import Tournament from "./routes/Tournament"
 // import Community from "./routes/Community";
@@ -19,7 +20,8 @@ function App() {
       <Route path="/Login" component={Login} />
       <Route path="/Guest-Book" component={Guestbook} />
       <Route path="/Contest" component={Con} />
-      {/* <Route path="/goods" component={Goods} />
+      <Route path="/intro" component={intro} />
+        {/* <Route path="/goods" component={Goods} />
       <Route path="/tournament" component={Tournament} />
       <Route path="/community" component={Community} />
       <Route path="/introduce" component={Introduce} />

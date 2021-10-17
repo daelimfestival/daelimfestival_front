@@ -220,7 +220,7 @@ function Cartoon(props) {
                     type="button"
                     onClick={() => onHandleOpenModal(1)}
                 />
-                <p>내가 견뎌낸 Corona Blue -극복왕-</p>
+                <p>내가 견뎌낸 Covid Blue -극복왕-</p>
                 <span>corona Blue(코로나로 인한 우울감)를 극복해낸 방법</span>
                 <input
                     className='clickE1'
