@@ -1,17 +1,13 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import "./Contest.css";
-// import ReactPlayer from 'react-player';
 import cartoon1 from '../images/cartoon1.png';
 import cartoon2 from '../images/cartoon2.png';
 import cartoon3 from '../images/cartoon3.png';
 import cartoon4 from '../images/cartoon4.png';
 import Modal from 'react-modal';
 import { AiOutlineClose } from "react-icons/ai";
-// import { FaRegHeart } from "react-icons/fa";
-// import { FaHeart } from "react-icons/fa";
 import { IconContext } from "react-icons";
-// import loginModal from "../common/loginModal";
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import CloseButton from 'react-bootstrap/CloseButton';
@@ -26,9 +22,7 @@ const modalStyles = {
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#272727',
-        /*
-        backgroundColor: 'rgba(32, 32, 32, 0.9)'*/
+        backgroundColor: '#272727'
     },
     content: {
         width: '600px',
@@ -101,6 +95,8 @@ function Cartoon(props) {
     const { m1, m2, m3, m4 } = handleRadio;
     const { showmodal1, showmodal2, showmodal3, showmodal4 } = handleOpenModal;
 
+    const [show, setShow] = useState(false);
+
     const vote = () => {
         let current_url = location.href;
 
@@ -109,7 +105,8 @@ function Cartoon(props) {
         let radio_value = m1 === true ? "m1" : (m2 === true ? "m2" : (m3 === true ? "m3" : (m4 === true ? "m4" : null)))
 
         if (!token) {
-            let moveLogin = setShow(true);
+            setShow(true);
+
             return 0;
         } else if (!radio_value) {
             alert("투표할 만화를 선택해주세요");
@@ -141,7 +138,6 @@ function Cartoon(props) {
         vote();
     }
 
-    const [show, setShow] = useState(false);
     return (
         <form className="contestBox" onSubmit={onSubmit}>
             <IconContext.Provider value={{
@@ -276,16 +272,19 @@ function Cartoon(props) {
                 </Button>
             </div>
 
-            <Alert show={show} variant="dark" className={"animate__animated animate__fadeInUp"}>
-                <CloseButton onClick={()=>setShow(false)}/>
-                <Alert.Heading>로그인이 필요합니다. 로그인하시겠습니까?</Alert.Heading>
+            <Alert show={show} variant="primary" className={"animate__animated animate__fadeInUp"}>
+                <CloseButton onClick={() => setShow(false)} />
+                <Alert.Heading>로그인이 필요합니다.</Alert.Heading>
                 <hr />
                 <div className="d-flex justify-content-around">
-                    <Button onClick={() => setShow(false)} variant="outline-success">
-                        <a href={'http://localhost:3000/Login'}>로그인하러가기</a>
+                    <Button onClick={() => {
+                        setShow(false);
+                        location.replace('http://localhost:3000/Login');
+                    }} variant="outline-success">
+                        로그인
                     </Button>
-                    <Button onClick={() => setShow(false)} variant="outline-success">
-                        <a href={'http://localhost:3000'}>메인으로 이동하기</a>
+                    <Button onClick={() => setShow(false)} variant="outline-danger">
+                        취소
                     </Button>
                 </div>
             </Alert>

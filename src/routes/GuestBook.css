@@ -12,7 +12,6 @@
 
 .guestbook_content_wrap {
     position: relative;
-    /* display: flex; */
     width: 50%;
     margin-top: 50px;
 }
@@ -110,4 +109,10 @@
 .guestbook_writedate {
     margin-bottom: 20px;
     font-weight: bold;
+}
+
+.alert_div {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
 }

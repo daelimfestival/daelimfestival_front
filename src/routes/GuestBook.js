@@ -6,6 +6,8 @@ import { IconContext } from "react-icons";
 import { FaCommentAlt } from "react-icons/fa";
 import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
+import CloseButton from 'react-bootstrap/CloseButton';
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from 'axios';
 import * as fnc from "../common/commonFunc.js";
@@ -14,13 +16,13 @@ const API_LINK = "http://52.79.141.166/action/board/guest_book_data.php";
 
 class GuestBook extends React.Component {
     state = {
-        nickname: "익명", //닉네임 값
         token: sessionStorage.getItem("token"),
         list_data: [],
         total: 0,
         page: 1,
         more_data: true,
-        inputContent: ""
+        inputContent: "",
+        login_modal: false
     };
 
     componentDidMount() {
@@ -60,8 +62,9 @@ class GuestBook extends React.Component {
 
     commentRegist() {
         if (!this.state.token) {
-            alert("로그인 후에 이용이 가능합니다.")
-            location.href = "/Login"
+            this.setState({
+                login_modal: true
+            })
         } else {
             this.getData();
         }
@@ -72,7 +75,7 @@ class GuestBook extends React.Component {
 
         let json_data = {
             current_url,
-            token : this.state.token,
+            token: this.state.token,
             content: this.state.inputContent
         };
 
@@ -100,10 +103,29 @@ class GuestBook extends React.Component {
                 <div className="guestbook_header">
                     <Header />
                 </div>
+
                 <div className="guestbook_content_wrap">
+                    <div className="alert_div">
+                        <Alert show={this.state.login_modal} variant="primary" className={"animate__animated animate__fadeInUp"}>
+                            <CloseButton onClick={() => this.setState({ login_modal: false })} />
+                            <Alert.Heading>로그인이 필요합니다.</Alert.Heading>
+                            <hr />
+                            <div className="d-flex justify-content-around">
+                                <Button onClick={() => {
+                                    this.setState({ login_modal: false });
+                                    location.replace('http://localhost:3000/Login');
+                                }} variant="outline-success">
+                                    로그인
+                                </Button>
+                                <Button onClick={() => this.setState({ login_modal: false })} variant="outline-danger">
+                                    취소
+                                </Button>
+                            </div>
+                        </Alert>
+                    </div>
+
                     <Form onSubmit={this.onSubmit}>
                         <Form.Group>
-                            <p className="nickname">{this.state.nickname}</p>
                             <Form.Control className="input_text" type="text" value={this.state.inputContent} onChange={this.onChangeInputContent} maxLength="100" placeholder="내용을 입력하세요" />
                             <div className="regist_button_wrap">
                                 <Button className="regist_button" variant="primary" type="submit" onClick={() => this.commentRegist()}>
@@ -126,14 +148,14 @@ class GuestBook extends React.Component {
                         </div>
                     </Form>
                     <InfiniteScroll
-                        dataLength={this.state.list_data.length} //This is important field to render the next data
+                        dataLength={this.state.list_data.length}
                         next={this.fetchData}
                         hasMore={this.state.more_data}
                         loader={<h4>Loading...</h4>}
                     >
                         {this.state.list_data.map(brewery => (
-                            <div className="guestbook_content_area">
-                                <p className="guestbook_content_nickname">{this.state.nickname}</p>
+                            <div className="guestbook_content_area" key={brewery.idx}>
+                                <p className="guestbook_content_nickname">익명</p>
                                 <p className="guestbook_content_text">{brewery.content}</p>
                                 <p className="guestbook_writedate">{brewery.write_date}</p>
                             </div>

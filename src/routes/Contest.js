@@ -2,7 +2,6 @@ import React from 'react';
 import Header from "../common/header.js";
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Link } from 'react-router-dom';
 import "./Contest.css";
 import Cartoon from './Cartoon';
 import Literature from './Literature';
