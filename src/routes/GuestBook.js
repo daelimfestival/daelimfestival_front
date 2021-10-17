@@ -104,7 +104,7 @@ class GuestBook extends React.Component {
                     <Form onSubmit={this.onSubmit}>
                         <Form.Group>
                             <p className="nickname">{this.state.nickname}</p>
-                            <Form.Control className="input_text" type="text" value={this.state.inputContent} onChange={this.onChangeInputContent} placeholder="내용을 입력하세요" />
+                            <Form.Control className="input_text" type="text" value={this.state.inputContent} onChange={this.onChangeInputContent} maxLength="100" placeholder="내용을 입력하세요" />
                             <div className="regist_button_wrap">
                                 <Button className="regist_button" variant="primary" type="submit" onClick={() => this.commentRegist()}>
                                     등록

@@ -37,7 +37,7 @@ function Login(props) {
             },
             success: (res) => {
                 sessionStorage.setItem("token", res.token);
-                location.replace("/");
+                history.back();
             },
         });
     };

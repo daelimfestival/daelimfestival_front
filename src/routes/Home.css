@@ -1,3 +1,7 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
 #wrap {
   position: relative;
   width: 100%;
