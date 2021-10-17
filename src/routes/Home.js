@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../common/header.js";
 import { IconContext } from "react-icons";
-import { AiOutlineClose, AiFillTrophy } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import Modal from "react-modal";
 import StampPage from "../images/stamppage.png";
 import GuestBookImage from "../images/guestbook1.png";

@@ -1,7 +1,7 @@
 export const particlesParams = {
     particles: {
         number: {
-            value: 2000,
+            value: 50,
             density: {
                 enable: true,
                 value_area: 789.1476416322727
