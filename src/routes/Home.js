@@ -5,10 +5,9 @@ import { IconContext } from "react-icons";
 import { AiOutlineClose } from "react-icons/ai";
 import Modal from "react-modal";
 import StampPage from "../images/stamppage.png";
-import GuestBookImage from "../images/guestbook1.png";
+import GuestBookImage from "../images/guestbook.png";
 import trophy from "../images/trophy.png";
 import intro from "../images/pxArt.png";
-
 import StampImage from "../images/stamp.png";
 import GamePad from "../images/game.png";
 import "./Home.css";

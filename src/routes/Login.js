@@ -61,7 +61,7 @@ function Login(props) {
                     <Form.Group>
                         <Form.Control className="login_inputpwd" type="password" placeholder="Password" value={inputPassword} onChange={onChangeInputPassword} />
                     </Form.Group>
-                    <Button className="login_button" variant="primary" type="submit">
+                    <Button className="login_button" variant="dark" type="submit">
                         LOGIN
                     </Button>
                 </Form>
