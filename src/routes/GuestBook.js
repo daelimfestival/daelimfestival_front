@@ -6,27 +6,26 @@ import { IconContext } from "react-icons";
 import { FaCommentAlt } from "react-icons/fa";
 import './GuestBook.css'
 import Button from 'react-bootstrap/Button';
+import InfiniteScroll from "react-infinite-scroll-component";
 import axios from 'axios';
 
 const API_LINK = "http://52.79.141.166/action/board/guest_book_data.php";
-const page_add = 1;
 
 class GuestBook extends React.Component {
     state = {
-        nickname: "닉네임", //닉네임 값
-        commentLength: "0", //댓글 값
+        nickname: "익명", //닉네임 값
         token: sessionStorage.getItem("token"),
+        list_data: [],
+        total: 0,
         page: 1,
+        more_data: true
     };
 
-    commentRegist() {
-        if (!this.state.token) {
-            alert("로그인 후에 이용이 가능합니다.")
-            location.href = "/Login"
-        }
+    componentDidMount() {
+        this.fetchData()
     }
 
-    loadFunc = () => {
+    fetchData = async () => {
         let current_url = location.href;
 
         let json_data = {
@@ -37,37 +36,25 @@ class GuestBook extends React.Component {
 
         let json = btoa(encodeURIComponent(JSON.stringify(json_data)));
 
-        return axios.post(
+        await axios.post(
             API_LINK,
             {
                 json: json
             }
-        ).then((res) => {
-            const result = res.data.list
-
-            console.log(result)
-        })
-    }
-
-    InfiniteScrollfnc = () => {
-        let s_height = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
-
-        let s_top = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
-
-        let c_height = document.documentElement.clientHeight;
-
-        if (s_top + c_height === s_height) {
+        ).then(res =>
             this.setState({
-                page: this.state.page + page_add
+                total: this.state.total === 0 ? res.data.total : 0,
+                list_data: [...this.state.list_data, ...res.data.list],
+                page: this.state.page + 1
             })
+        );
+    };
 
-            this.loadFunc()
+    commentRegist() {
+        if (!this.state.token) {
+            alert("로그인 후에 이용이 가능합니다.")
+            location.href = "/Login"
         }
-    }
-
-    componentDidMount() {
-        this.loadFunc()
-        window.addEventListener("scroll", this.InfiniteScrollfnc, true)
     }
 
     onSubmit = (e) => {
@@ -102,13 +89,23 @@ class GuestBook extends React.Component {
                                     <FaCommentAlt />
                                 </div>
                             </IconContext.Provider>
-                            <p className="comment_length">{this.state.commentLength}</p>
+                            <p className="comment_length">{this.state.total}</p>
                         </div>
                     </Form>
                 </div>
-                <div>
-                    <p>{ }</p>
-                </div>
+                <InfiniteScroll
+                    dataLength={this.state.list_data.length} //This is important field to render the next data
+                    next={this.fetchData}
+                    more_data={this.state.more_data}
+                    loader={<h4>Loading...</h4>}
+                >
+                    {this.state.list_data.map(brewery => (
+                        <ul className="user" key={brewery.idx}>
+                            <li>내용: {brewery.content}</li>
+                            <li>작성날짜: {brewery.write_date}</li>
+                        </ul>
+                    ))}
+                </InfiniteScroll>
             </div>
         )
     }
