@@ -129,6 +129,7 @@ function Cartoon(props) {
             },
             success: (res) => {
                 alert(res.msg);
+                location.reload();
             },
         });
     };
