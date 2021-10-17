@@ -119,36 +119,10 @@ class Cartoon extends Component{
             showModal5: false,
         });
     }
-    const getData = () => {
-        let current_url = location.href;
-
-        let json_data = {
-            current_url,
-            id : inputId,
-            password : inputPassword
-        };
-
-        let json = btoa(encodeURIComponent(JSON.stringify(json_data)));
-
-        fnc.executeQuery({
-            url: "action/member/vote.php",
-            data: {
-                json: json
-            },
-            success: (res) => {
-                alert("투표가 완료되었습니다.");
-            },
-        });
-    };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        getData();
-    };
 
     render(){
         return (
-            <form className="contestBox" onSubmit={onSubmit}>
+            <form className="contestBox">
                 <IconContext.Provider value={{
                     style: {
                         width: "100%",
