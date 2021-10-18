@@ -282,7 +282,7 @@ function Cartoon(props) {
                 <div className="d-flex justify-content-around">
                     <Button onClick={() => {
                         setShow(false);
-                        location.replace('http://localhost:3000/Login');
+                        location.replace('/Login');
                     }} variant="outline-success">
                         로그인
                     </Button>
